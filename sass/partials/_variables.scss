@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+
+/*	Variables
+/* -------------------------------------------------------------------------- */
+
+/* Fonts ---------------------------------- */
+$font_body:     Arial, Helvetica Neue, Helvetica, sans-serif;;
+$font__heading: Arial, Helvetica Neue, Helvetica, sans-serif;
+$font__accent:  script;
+
+/* Color ---------------------------------- */
+$color__primary:               #444444;
+$color__secondary:             #6D6D6D;
+$color__accent:                #CD2653;
+$color__background:            #FFFFFF;
+$color__subtle-background:     #F5EFE0;
+$color__body-copy:             #444444;
+$color__border:                #6D6D6D;
+
+/* Responsive ---------------------------------- */
+
+$breakpoint_small_blocks: 37.5em; //600px
+$breakpoint_tablet: 48em; //768px
+$breakpoint_laptop: 60em; //960px
+$breakpoint_desktop: 80em; //1280px
+
+
+$media_query_until_small_blocks: screen and (max-width: $breakpoint_small_blocks - .0625);
+$media_query_at_least_small_blocks: screen and (min-width: $breakpoint_small_blocks);
+$media_query_until_tablet: screen and (max-width: $breakpoint_tablet - .0625);
+$media_query_at_least_tablet: screen and (min-width: $breakpoint_tablet);
+$media_query_until_laptop: screen and (max-width: $breakpoint_laptop - .0625);
+$media_query_at_least_laptop: screen and (min-width: $breakpoint_laptop);
+$media_query_until_desktop: screen and (max-width: $breakpoint_desktop - .0625);
+$media_query_at_least_desktop: screen and (min-width: $breakpoint_desktop);
+
+/* Blocks ---------------------------------- */
+$content-max-width: 59rem;

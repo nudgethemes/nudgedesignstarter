@@ -1,0 +1,10 @@
+# Local files
+.DS_Store
+.thumbsdb
+.svn
+init.sh
+templates/*
+
+
+# Theme Exclusions
+/node_modules

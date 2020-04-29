@@ -1,0 +1,46 @@
+{
+	"name": "nudgedesignstarter",
+	"version": "1.0.0",
+	"description": "Team 51 Starter Theme",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Theme",
+		"nudgedesignstarter"
+	],
+	"homepage": "https://github.com/nudgethemes/nudesignstarter",
+	"devDependencies": {
+		"@wordpress/browserslist-config": "^2.6.0",
+		"autoprefixer": "^9.6.1",
+		"chokidar-cli": "^2.0.0",
+		"node-sass": "^4.12.0",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^6.1.3",
+		"postcss-focus-within": "^3.0.0",
+		"rtlcss": "^2.4.0"
+	},
+	"rtlcssConfig": {
+		"options": {
+			"autoRename": false,
+			"autoRenameStrict": false,
+			"blacklist": {},
+			"clean": true,
+			"greedy": false,
+			"processUrls": false,
+			"stringMap": []
+		},
+		"plugins": [],
+		"map": false
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"scripts": {
+		"start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+		"build:style": "node-sass sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1 --source-map true && postcss -r style.css",
+		"build:style-editor": "node-sass sass/editor-style-block.scss assets/css/editor-style-block.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r assets/css/editor-style-block.css",
+		"build": "run-p \"build:*\"",
+		"watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
+	}
+}
