@@ -1336,6 +1336,10 @@ h2.entry-title {
 		@media ( min-width: 700px ) {
 			font-size: 2.6rem;
 		}
+
+		@media ( min-width: 1000px ) {
+			font-size: 2.8rem;
+		}
 	}
 }
 
@@ -1494,6 +1498,10 @@ h2.entry-title {
 	@media ( min-width: 700px ) {
 		margin: 2rem auto 0 auto;
 		width: calc(100% - 8rem);
+	}
+
+	@media ( min-width: 1000px ) {
+		width: 100%;
 	}
 }
 

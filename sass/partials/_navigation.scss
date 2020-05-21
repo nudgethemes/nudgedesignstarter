@@ -33,6 +33,19 @@
 
 .primary-menu-wrapper {
     display: none;
+
+    @media ( min-width: 1000px ) {
+        display: block;
+        width: 100%;
+    }
+
+     + .header-toggles {
+
+         @media ( min-width: 1000px ) {
+             margin-left: 3rem;
+         }
+    }
+
 }
 
 ul.primary-menu {
@@ -270,6 +283,15 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
     top: 0;
     transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
     z-index: 99;
+
+    &.active .menu-modal-inner {
+
+        @media ( min-width: 1000px ) {
+            opacity: 1;
+            transform: translateX(0);
+            transition-timing-function: ease-out;
+        }
+    }
 }
 
 .admin-bar .menu-modal {
@@ -301,6 +323,15 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
     overflow: auto;
     -ms-overflow-style: auto;
     width: 100%;
+
+    @media ( min-width: 1000px ) {
+        box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        padding: 0;
+        transform: translateX(20rem);
+        transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+        width: 50rem;
+    }
 }
 
 .menu-wrapper {
@@ -308,6 +339,13 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    .section-inner {
+
+        @media ( min-width: 1000px ) {
+            width: calc(100% - 8rem);
+        }
+    }
 }
 
 button.close-nav-toggle {
@@ -359,167 +397,197 @@ button.close-nav-toggle {
         left: auto;
         width: 100%;
     }
-}
 
-.modal-menu li {
-    border-color: #dedfdf;
-    border-style: solid;
-    border-width: 0.1rem 0 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 1;
-    justify-content: flex-start;
-    margin: 0;
-}
-
-.modal-menu > li > a,
-.modal-menu > li > .ancestor-wrapper > a {
-    font-size: 2rem;
-    font-weight: 700;
-
-    @media ( min-width: 700px ) {
-        font-size: 2.4rem;
-        padding: 2.5rem 0;
+    @media ( min-width: 1000px ) {
+        opacity: 1;
+        justify-content: flex-end;
+        padding: 0;
+        transition: background-color 0.3s ease-in, left 0s 0.3s, right 0s 0.3s;
     }
 
+    li {
+        border-color: #dedfdf;
+        border-style: solid;
+        border-width: 0.1rem 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    > li > a,
+    > li > .ancestor-wrapper > a {
+        font-size: 2rem;
+        font-weight: 700;
+
+        @media ( min-width: 700px ) {
+            font-size: 2.4rem;
+            padding: 2.5rem 0;
+        }
+
+    }
+
+    > li:last-child {
+        border-bottom-width: 0.1rem;
+    }
+
+    .ancestor-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    a {
+        display: block;
+        padding: 2rem 2.5rem;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    a:focus,
+    a:hover,
+    li.current-menu-item > .ancestor-wrapper > a,
+    li.current_page_ancestor > .ancestor-wrapper > a {
+        text-decoration: underline;
+    }
+
+    ul {
+        display: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    ul li {
+        border-left-width: 1rem;
+
+        @media ( min-width: 700px ) {
+            border-left-color: transparent;
+        }
+
+        a {
+            color: inherit;
+            font-weight: 500;
+        }
+    }
+
+    > li > .ancestor-wrapper > button.sub-menu-toggle {
+
+        @media ( min-width: 700px ) {
+            padding: 0 3rem;
+        }
+
+        svg {
+
+            @media ( min-width: 700px ) {
+                height: 1.1rem;
+                width: 1.8rem;
+            }
+        }
+    }
 }
 
-.modal-menu > li:last-child {
-    border-bottom-width: 0.1rem;
-}
 
-.modal-menu .ancestor-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
 
-.modal-menu a {
-    display: block;
-    padding: 2rem 2.5rem;
-    text-decoration: none;
-    width: 100%;
-}
 
-.modal-menu a:focus,
-.modal-menu a:hover,
-.modal-menu li.current-menu-item > .ancestor-wrapper > a,
-.modal-menu li.current_page_ancestor > .ancestor-wrapper > a {
-    text-decoration: underline;
-}
 
 button.sub-menu-toggle {
     border-left: 0.1rem solid #dedfdf;
     flex-shrink: 0;
     margin: 1rem 0;
     padding: 0 2.5rem;
-}
-
-button.sub-menu-toggle svg {
-    height: 0.9rem;
-    transition: transform 0.15s linear;
-    width: 1.5rem;
-}
-
-button.sub-menu-toggle.active svg {
-    transform: rotate(180deg);
-}
-
-.modal-menu ul {
-    display: none;
-    margin: 0;
-    width: 100%;
-}
-
-.modal-menu ul li {
-    border-left-width: 1rem;
-
-    @media ( min-width: 700px ) {
-        border-left-color: transparent;
-    }
-}
-
-.modal-menu ul li a {
-    color: inherit;
-    font-weight: 500;
-}
-
-.modal-menu > li > .ancestor-wrapper > button.sub-menu-toggle {
-
-    @media ( min-width: 700px ) {
-        padding: 0 3rem;
-    }
 
     svg {
+        height: 0.9rem;
+        transition: transform 0.15s linear;
+        width: 1.5rem;
+    }
 
-        @media ( min-width: 700px ) {
-            height: 1.1rem;
-            width: 1.8rem;
+    &.active {
+
+        @media ( min-width: 1000px ) {
+            background: rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease-out;
+        }
+
+        svg {
+            transform: rotate(180deg);
         }
     }
+
+    &.cover-modal {
+
+        @media ( min-width: 1000px ) {
+            background: rgba(0, 0, 0, 0);
+        }
+    }
+
 }
 
 
 /* Main menu animation ----------------------- */
 
-.menu-wrapper .menu-item {
-    position: relative;
-}
+.menu-wrapper {
 
-.menu-wrapper .active {
-    display: block;
-}
+    .menu-item {
+        position: relative;
+    }
 
-.menu-wrapper.is-toggling {
-    pointer-events: none;
-}
+    .active {
+        display: block;
+    }
 
-.menu-wrapper.is-toggling .menu-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    width: 100%;
-}
+    &.is-toggling {
+        pointer-events: none;
+    }
 
-.menu-wrapper.is-toggling .menu-bottom .social-menu .menu-item {
-    width: auto;
-}
+    &.is-toggling .menu-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+    }
 
-.menu-wrapper.is-animating .menu-item,
-.menu-wrapper.is-animating .toggling-target {
-    transition-duration: 250ms;
-}
+    &.is-toggling .menu-bottom .social-menu .menu-item {
+        width: auto;
+    }
 
-.menu-wrapper.is-animating .menu-item {
-    transition-property: transform;
-}
+    &.is-animating .menu-item,
+    &.is-animating .toggling-target {
+        transition-duration: 250ms;
+    }
 
-.menu-wrapper.is-toggling .toggling-target {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-}
+    &.is-animating .menu-item {
+        transition-property: transform;
+    }
 
-.menu-wrapper.is-toggling .toggling-target.active {
-    opacity: 0;
-}
+    &.is-toggling .toggling-target {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
 
-.menu-wrapper.is-animating.is-toggling .toggling-target {
-    display: block;
-    transition-property: opacity;
-    opacity: 0;
-}
+    &.is-toggling .toggling-target.active {
+        opacity: 0;
+    }
 
-.menu-wrapper.is-animating.is-toggling .toggling-target.active {
-    opacity: 1;
-}
+    &.is-animating.is-toggling .toggling-target {
+        display: block;
+        transition-property: opacity;
+        opacity: 0;
 
-.menu-wrapper.is-toggling .modal-menu > li:last-child li {
-    border-top-color: transparent;
-    border-bottom-width: 0.1rem;
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &.is-toggling .modal-menu > li:last-child li {
+        border-top-color: transparent;
+        border-bottom-width: 0.1rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -528,7 +596,6 @@ button.sub-menu-toggle.active svg {
     .menu-wrapper.is-animating .toggling-target {
         transition-duration: 1ms !important;
     }
-
 }
 
 
@@ -536,10 +603,18 @@ button.sub-menu-toggle.active svg {
 
 .expanded-menu {
     display: none;
+
+    @media ( min-width: 1000px ) {
+        display: block;
+    }
 }
 
 .mobile-menu {
     display: block;
+
+    @media ( min-width: 1000px ) {
+        display: none;
+    }
 }
 
 
@@ -556,8 +631,20 @@ button.sub-menu-toggle.active svg {
         padding: 4.4rem 0;
     }
 
+    @media ( min-width: 1000px ) {
+        padding: 6rem 0;
+    }
+
     nav {
         width: 100%;
+    }
+
+    .social-menu {
+        justify-content: center;
+
+        @media ( min-width: 1000px ) {
+            justify-content: flex-start;
+        }
     }
 }
 
@@ -581,10 +668,6 @@ button.sub-menu-toggle.active svg {
     }
 }
 
-.menu-bottom .social-menu {
-    justify-content: center;
-}
-
 
 /* Site Pagination ------------------------------- */
 
@@ -603,6 +686,11 @@ button.sub-menu-toggle.active svg {
         margin: -2.5rem 0 0 -4rem;
     }
 
+    @media ( min-width: 1000px ) {
+        justify-content: space-between;
+        margin: 0;
+        width: 100%;
+    }
 }
 
 .pagination-separator {
@@ -620,6 +708,10 @@ button.sub-menu-toggle.active svg {
         margin: 2.5rem 0 0 4rem;
     }
 
+    @media ( min-width: 1000px ) {
+        margin: 0 2rem;
+    }
+
 }
 
 .nav-links .placeholder {
@@ -627,19 +719,44 @@ button.sub-menu-toggle.active svg {
     visibility: hidden;
 }
 
-.pagination a {
-    text-decoration: none;
+.pagination {
+
+    a {
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .next,
+    .prev {
+        display: block;
+    }
+
+    .prev {
+        @media ( min-width: 1000px ) {
+            margin: 0 auto 0 0;
+        }
+    }
+
+    .next {
+
+        @media ( min-width: 1000px ) {
+            text-align: right;
+            margin: 0 0 0 auto;
+        }
+    }
+
+
+    .dots {
+        transform: translateY(-0.3em);
+        color: #6d6d6d;
+    }
 }
 
-.pagination a:focus,
-.pagination a:hover {
-    text-decoration: underline;
-}
 
-.pagination .dots {
-    transform: translateY(-0.3em);
-    color: #6d6d6d;
-}
 
 .nav-short {
     display: none;
@@ -649,7 +766,6 @@ button.sub-menu-toggle.active svg {
     }
 
 }
-
 
 
 /* Single Pagination ------------------------- */
