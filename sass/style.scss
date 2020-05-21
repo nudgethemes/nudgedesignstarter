@@ -306,6 +306,13 @@ hr {
 	margin: 4rem 0;
 }
 
+@media ( min-width: 700px ) {
+
+	hr {
+		margin: 8rem auto;
+	}
+}
+
 .entry-content hr,
 hr.styled-separator {
 	background: currentColor;
@@ -348,6 +355,22 @@ ol {
 	margin: 0 0 3rem 3rem;
 }
 
+@media ( max-width: 479px ) {
+
+	ul,
+	ol {
+		margin: 0 0 3rem 2rem;
+	}
+}
+
+@media ( min-width: 700px ) {
+
+	ul,
+	ol {
+		margin-bottom: 4rem;
+	}
+}
+
 ul {
 	list-style: disc;
 }
@@ -375,6 +398,13 @@ ol ol ol {
 li {
 	line-height: 1.5;
 	margin: 0.5rem 0 0 2rem;
+}
+
+@media ( max-width: 479px ) {
+
+	li {
+		margin: 0.5rem 0 0 1rem;
+	}
 }
 
 li > ul,
@@ -472,6 +502,13 @@ pre {
 	text-align: left;
 }
 
+@media ( min-width: 700px ) {
+
+	pre {
+		padding: 3rem;
+	}
+}
+
 pre code {
 	background: transparent;
 	padding: 0;
@@ -552,6 +589,13 @@ table {
 	max-width: 100%;
 	overflow: hidden;
 	width: 100%;
+}
+
+@media ( min-width: 700px ) {
+
+	table {
+		font-size: 1.8rem;
+	}
 }
 
 .alignleft > table {
@@ -1602,6 +1646,14 @@ h2.entry-title {
 .alignleft,
 .alignright {
 	max-width: 50%;
+}
+
+@media ( min-width: 480px ) {
+
+	.alignleft,
+	.alignright {
+		max-width: 26rem;
+	}
 }
 
 .alignleft {
