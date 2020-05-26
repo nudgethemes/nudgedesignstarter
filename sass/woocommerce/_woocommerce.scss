@@ -89,8 +89,8 @@
         }
 
         .woocommerce-form-login__submit{
-            background-color: transparent;
-            color: $color__primary;
+            background-color: $color__button--outline__background;
+            color: $color__button--outline__text;
             display: block;
             font-size: 1.4rem;
             margin-top: 3rem;
@@ -99,8 +99,8 @@
 
             &:focus,
             &:hover{
-                background-color: $color__primary;
-                color: #fff;
+                background-color: $color__button--outline__background--hover;
+                color: $color__button--outline__text--hover;
             }
         }
         .lost_password{
@@ -207,7 +207,7 @@
     }
 
     .woocommerce-mini-cart-item {
-        border-bottom: $color__primary;
+        border-bottom: $color__body-copy;
         padding: 1rem 0;
 
         .quantity{
@@ -347,9 +347,9 @@
             background-image: url(assets/svg/close.svg);
             background-repeat: no-repeat;
             background-size: 16px;
-            border: 1px solid $color__primary;
+            border: 1px solid $color__body-copy;
             border-radius: 50%;
-            color: $color__primary;
+            color: $color__body-copy;
             content: "";
             display: inline-block;
             font-size: 1.6rem;
@@ -387,9 +387,9 @@
             background-image: url(assets/svg/close.svg);
             background-repeat: no-repeat;
             background-size: 16px;
-            border: 1px solid $color__primary;
+            border: 1px solid $color__body-copy;
             border-radius: 50%;
-            color: $color__primary;
+            color: $color__body-copy;
             content: "";
             display: inline-block;
             font-size: 1.6rem;
@@ -1077,7 +1077,7 @@ p.stars {
     }
 
     p.price {
-        color: $color__primary;
+        color: $color__body-copy;
         font-size: 2rem;
         margin-bottom: 3.5rem;
         margin-top: 3rem;
@@ -1170,7 +1170,7 @@ p.stars {
 
     .product_meta {
         border-top: 2px solid $color__border;
-        color: $color__primary;
+        color: $color__body-copy;
         font-size: 1.6rem;
         font-weight: bold;
         line-height: 1.8;
@@ -1181,7 +1181,7 @@ p.stars {
         }
 
         a {
-            color: $color__primary;
+            color: $color__body-copy;
             font-weight: normal;
             text-decoration: none;
 
@@ -1578,12 +1578,13 @@ p.stars {
             }
 
             button:not([name="update_cart"]) {
-                background-color: #FFF;
-                color: $color__primary;
+                background-color: $color__button--outline__background;
+                color: $color__button--outline__text;
+
 
                 &:hover {
-                    background-color: $color__primary;
-                    color: #fff;
+                    background-color: $color__button--outline__background--hover;
+                    color: $color__button--outline__text--hover;
                 }
             }
         }
@@ -1993,7 +1994,7 @@ p.stars {
             margin-top: 0;
 
             a {
-                color: $color__primary;
+                color: $color__body-copy;
                 display: block;
                 font-size: 1.8rem;
                 font-weight: bold;
@@ -2001,7 +2002,7 @@ p.stars {
                 text-decoration: none;
 
                 fill {
-                    color: $color__primary;
+                    color: $color__body-copy;
                 }
 
                 &:hover {
@@ -2013,7 +2014,7 @@ p.stars {
                     background-size: 18px 18px;
                     background-repeat: no-repeat;
                     display: inline-block;
-                    color: $color__primary;
+                    color: $color__body-copy;
                     content: '';
                     margin-right: 14px;
                     width: 18px;
@@ -2043,8 +2044,8 @@ p.stars {
             }
 
             &.is-active a {
-                background: $color__primary;
-                color: #FFF;
+                background: $color__body-copy;
+                color: $color__background;
 
                 &:before {
                     filter: invert(1);

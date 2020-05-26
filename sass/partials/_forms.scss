@@ -180,8 +180,15 @@ button.search-submit,
 button.toggle {
     background-color: transparent;
     min-width: auto;
-    border: none;
+    border: 0 none;
     padding: 0;
+
+    &:hover,
+    &:focus{
+        color: $color__body-copy;
+        border: 0 none;
+        background-color: transparent;
+    }
 
     .footer-widgets .widget & {
         background-color: transparent;

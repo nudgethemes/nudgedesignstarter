@@ -183,7 +183,7 @@
 
 .wp-block-jetpack-rating-star path.is-rating-unfilled {
 	fill-opacity: 1;
-	stroke: $color__primary;
+	stroke: $color__body-copy;
 	fill: none;
 }
 
@@ -194,6 +194,6 @@
 	background-repeat: no-repeat;
 	background-size: 16px;
 
-	border: 1px solid $color__primary;
+	border: 1px solid $color__body-copy;
 	border-radius: 50%;
 }

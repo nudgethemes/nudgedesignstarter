@@ -40,10 +40,6 @@ with others.
 /* -------------------------------------------------------------------------- */
 /*	Variables
 /* -------------------------------------------------------------------------- */
-/* Fonts ---------------------------------- */
-/* Color ---------------------------------- */
-/* Responsive ---------------------------------- */
-/* Blocks ---------------------------------- */
 /**
  * Base styles (reset, normalize, accessibility, clearings, typography)
  */
@@ -111,7 +107,7 @@ body {
 	background: #FFF;
 	box-sizing: border-box;
 	color: #021A23;
-	font-family: Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	font-size: 2rem;
 	text-align: right;
 }
@@ -847,6 +843,10 @@ button.toggle {
 	position: relative;
 }
 
+.widget .search-form {
+	max-width: 400px;
+}
+
 .search-form .search-field,
 .search-form .search-submit {
 	margin: 0 0 0.8rem 0;
@@ -854,10 +854,6 @@ button.toggle {
 
 .search-form .search-field {
 	width: 100%;
-}
-
-.widget .search-form .search-field {
-	max-width: 400px;
 }
 
 .search-form .search-submit {
@@ -1753,7 +1749,7 @@ a.read-more:hover .read-more-icon {
 	background: #009FDB;
 	border: 2px solid #009FDB;
 	border-radius: 4px;
-	color: #fff;
+	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.4rem;
@@ -1779,7 +1775,8 @@ a.read-more:hover .read-more-icon {
 .wp-block-file__button:hover,
 .wp-block-file__button:focus,
 .wp-block-file__button.has-focus {
-	background-color: #FFF;
+	background-color: #FFFFFF;
+	border: 2px solid #009FDB;
 	color: #009FDB;
 }
 
@@ -1787,17 +1784,17 @@ a.read-more:hover .read-more-icon {
  * Block Options
  */
 .wp-block-button:not(.has-background).is-style-outline .wp-block-button__link:not(.has-background) {
-	background-color: transparent;
+	background: transparent;
+	border: 2px solid currentcolor;
 }
 
 .wp-block-button:not(.has-background).is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color) {
-	color: #009FDB;
+	color: #021A23;
 }
 
 .wp-block-button:not(.has-background).is-style-outline .wp-block-button__link:not(.has-background):hover, .wp-block-button:not(.has-background).is-style-outline .wp-block-button__link:not(.has-background):focus, .wp-block-button:not(.has-background).is-style-outline .wp-block-button__link:not(.has-background).has-focus {
-	background-color: #009FDB;
-	border-color: #009FDB;
-	color: #FFFFFF;
+	background-color: #021A23;
+	color: #021A23;
 }
 
 .wp-block-button .is-style-outline .wp-block-button__link:not(.has-text-color) {
@@ -1900,7 +1897,7 @@ a.read-more:hover .read-more-icon {
 
 .wp-block-cover,
 .wp-block-cover-image {
-	color: #009FDB;
+	color: #021A23;
 	background-color: #FFFFFF;
 	margin: inherit;
 	/* default & custom background-color */
@@ -1967,7 +1964,7 @@ a.read-more:hover .read-more-icon {
 .wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
 .wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
 .wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text {
-	color: #009FDB;
+	color: #021A23;
 }
 
 .wp-block-cover h2.has-text-align-left,
@@ -2037,7 +2034,7 @@ a.read-more:hover .read-more-icon {
 	background: #009FDB;
 	border: 2px solid #009FDB;
 	border-radius: 4px;
-	color: #fff;
+	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.4rem;
@@ -2060,7 +2057,8 @@ a.read-more:hover .read-more-icon {
 }
 
 .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button.has-focus {
-	background-color: #FFF;
+	background-color: #FFFFFF;
+	border: 2px solid #009FDB;
 	color: #009FDB;
 }
 
@@ -2217,7 +2215,7 @@ a.read-more:hover .read-more-icon {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
-	border-top: 1px solid #009FDB;
+	border-top: 1px solid #021A23;
 	font-size: 1.8rem;
 	line-height: 1.4;
 	/* Vertical margins logic */
@@ -2283,7 +2281,7 @@ a.read-more:hover .read-more-icon {
 
 .wp-block-latest-posts > li > a {
 	color: #021A23;
-	font-family: Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	font-size: 2.8rem;
 	font-weight: bold;
 	display: block;
@@ -2558,7 +2556,7 @@ p.has-background {
 	background: #009FDB;
 	border: 2px solid #009FDB;
 	border-radius: 4px;
-	color: #fff;
+	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.4rem;
@@ -2581,7 +2579,8 @@ p.has-background {
 }
 
 .a8c-posts-list__view-all:hover, .a8c-posts-list__view-all:focus, .a8c-posts-list__view-all.has-focus {
-	background-color: #FFF;
+	background-color: #FFFFFF;
+	border: 2px solid #009FDB;
 	color: #009FDB;
 }
 
@@ -2629,7 +2628,7 @@ p.has-background {
 
 .wp-block-pullquote blockquote cite {
 	color: #6d6d6d;
-	font-family: Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	font-size: 1.6rem;
 	font-weight: 500;
 	margin-top: 1.2rem;
@@ -2735,7 +2734,7 @@ blockquote.wp-block-quote .wp-block-quote__citation,
 blockquote.wp-block-quote cite,
 blockquote.wp-block-quote footer {
 	color: #BDBFC1;
-	font-family: Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.25;
 	display: block;
@@ -5100,9 +5099,10 @@ button.sub-menu-toggle.active svg {
 
 .pagination a,
 .woocommerce-pagination .page-numbers a {
+	background-color: #009FDB;
 	border: 1px solid #009FDB;
 	border-radius: 4px;
-	color: #021A23;
+	color: #FFFFFF;
 	padding: 1rem 1.2rem;
 	text-decoration: none;
 }
@@ -5110,8 +5110,8 @@ button.sub-menu-toggle.active svg {
 .pagination a:focus, .pagination a:hover,
 .woocommerce-pagination .page-numbers a:focus,
 .woocommerce-pagination .page-numbers a:hover {
-	color: #FFF;
-	background-color: #009FDB;
+	color: #009FDB;
+	background-color: #FFFFFF;
 }
 
 .pagination a.next svg,
@@ -5128,10 +5128,10 @@ button.sub-menu-toggle.active svg {
 
 .pagination span.current,
 .woocommerce-pagination .page-numbers span.current {
+	background-color: #009FDB;
 	border: 1px solid #009FDB;
 	border-radius: 4px;
-	color: #FFF;
-	background-color: #009FDB;
+	color: #FFFFFF;
 	padding: 1rem 1.2rem;
 }
 
@@ -5253,7 +5253,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .widget caption {
-	background-color: #009FDB;
+	background-color: #021A23;
 	color: #FFF;
 }
 
@@ -5450,7 +5450,7 @@ input,
 textarea {
 	border-color: #021A23;
 	color: #021A23;
-	font-family: Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 
 code,
@@ -5655,8 +5655,16 @@ button.search-submit,
 button.toggle {
 	background-color: transparent;
 	min-width: auto;
-	border: none;
+	border: 0 none;
 	padding: 0;
+}
+
+button.search-submit:hover, button.search-submit:focus,
+button.toggle:hover,
+button.toggle:focus {
+	color: #021A23;
+	border: 0 none;
+	background-color: transparent;
 }
 
 .footer-widgets .widget button.search-submit, .footer-widgets .widget
@@ -5675,7 +5683,7 @@ input[type="submit"] {
 	background: #009FDB;
 	border: 2px solid #009FDB;
 	border-radius: 4px;
-	color: #fff;
+	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.4rem;
@@ -5717,7 +5725,8 @@ input[type="reset"].has-focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"].has-focus {
-	background-color: #FFF;
+	background-color: #FFFFFF;
+	border: 2px solid #009FDB;
 	color: #009FDB;
 }
 
@@ -5956,7 +5965,7 @@ ul.footer-social li {
 
 .menu-user-login-wrapper .menu-user-login-form .woocommerce-form-login__submit {
 	background-color: transparent;
-	color: #009FDB;
+	color: #021A23;
 	display: block;
 	font-size: 1.4rem;
 	margin-top: 3rem;
@@ -5965,8 +5974,8 @@ ul.footer-social li {
 }
 
 .menu-user-login-wrapper .menu-user-login-form .woocommerce-form-login__submit:focus, .menu-user-login-wrapper .menu-user-login-form .woocommerce-form-login__submit:hover {
-	background-color: #009FDB;
-	color: #fff;
+	background-color: #021A23;
+	color: #021A23;
 }
 
 .menu-user-login-wrapper .menu-user-login-form .lost_password {
@@ -6068,7 +6077,7 @@ ul.footer-social li {
 }
 
 .cart-wrapper .woocommerce-mini-cart-item {
-	border-bottom: #009FDB;
+	border-bottom: #021A23;
 	padding: 1rem 0;
 }
 
@@ -6191,9 +6200,9 @@ ul.footer-social li {
 	background-image: url(assets/svg/close.svg);
 	background-repeat: no-repeat;
 	background-size: 16px;
-	border: 1px solid #009FDB;
+	border: 1px solid #021A23;
 	border-radius: 50%;
-	color: #009FDB;
+	color: #021A23;
 	content: "";
 	display: inline-block;
 	font-size: 1.6rem;
@@ -6225,9 +6234,9 @@ ul.footer-social li {
 	background-image: url(assets/svg/close.svg);
 	background-repeat: no-repeat;
 	background-size: 16px;
-	border: 1px solid #009FDB;
+	border: 1px solid #021A23;
 	border-radius: 50%;
-	color: #009FDB;
+	color: #021A23;
 	content: "";
 	display: inline-block;
 	font-size: 1.6rem;
@@ -6857,7 +6866,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .single-product p.price {
-	color: #009FDB;
+	color: #021A23;
 	font-size: 2rem;
 	margin-bottom: 3.5rem;
 	margin-top: 3rem;
@@ -6951,7 +6960,7 @@ p.stars.selected a:not(.active)::before {
 
 .single-product .product_meta {
 	border-top: 2px solid #021A23;
-	color: #009FDB;
+	color: #021A23;
 	font-size: 1.6rem;
 	font-weight: bold;
 	line-height: 1.8;
@@ -6965,7 +6974,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .single-product .product_meta a {
-	color: #009FDB;
+	color: #021A23;
 	font-weight: normal;
 	text-decoration: none;
 }
@@ -7354,13 +7363,13 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-cart .woocommerce-cart-form .shop_table button:not([name="update_cart"]) {
-	background-color: #FFF;
-	color: #009FDB;
+	background-color: transparent;
+	color: #021A23;
 }
 
 .woocommerce-cart .woocommerce-cart-form .shop_table button:not([name="update_cart"]):hover {
-	background-color: #009FDB;
-	color: #fff;
+	background-color: #021A23;
+	color: #021A23;
 }
 
 .woocommerce-cart .entry-content > div.woocommerce:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
@@ -7770,7 +7779,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-MyAccount-navigation ul li a {
-	color: #009FDB;
+	color: #021A23;
 	display: block;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -7779,7 +7788,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-MyAccount-navigation ul li a fill {
-	color: #009FDB;
+	color: #021A23;
 }
 
 .woocommerce-MyAccount-navigation ul li a:hover {
@@ -7791,7 +7800,7 @@ p.stars.selected a:not(.active)::before {
 	background-size: 18px 18px;
 	background-repeat: no-repeat;
 	display: inline-block;
-	color: #009FDB;
+	color: #021A23;
 	content: '';
 	margin-left: 14px;
 	width: 18px;
@@ -7820,8 +7829,8 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active a {
-	background: #009FDB;
-	color: #FFF;
+	background: #021A23;
+	color: #FFFFFF;
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active a:before {
@@ -8107,7 +8116,7 @@ p.stars.selected a:not(.active)::before {
 
 .wp-block-jetpack-rating-star path.is-rating-unfilled {
 	fill-opacity: 1;
-	stroke: #009FDB;
+	stroke: #021A23;
 	fill: none;
 }
 
@@ -8129,7 +8138,7 @@ body .widget_eu_cookie_law_widget.widget.top {
 
 body .widget_eu_cookie_law_widget #eu-cookie-law {
 	background: #FFFFFF;
-	border: 1px solid #009FDB;
+	border: 1px solid #021A23;
 	color: #021A23;
 	font-size: 1.8rem;
 	line-height: inherit;
@@ -8144,7 +8153,7 @@ body .widget_eu_cookie_law_widget #eu-cookie-law {
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative {
 	background: #021A23;
-	border-color: #009FDB;
+	border-color: #021A23;
 	color: #FFFFFF;
 }
 
@@ -8154,7 +8163,7 @@ body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept {
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus {
-	background: #009FDB;
+	background: #021A23;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
@@ -8165,7 +8174,7 @@ body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	background: #009FDB;
 	border: 2px solid #009FDB;
 	border-radius: 4px;
-	color: #fff;
+	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.4rem;
@@ -8187,7 +8196,8 @@ body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept.has-focus {
-	background-color: #FFF;
+	background-color: #FFFFFF;
+	border: 2px solid #009FDB;
 	color: #009FDB;
 }
 

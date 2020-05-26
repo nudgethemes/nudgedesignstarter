@@ -691,16 +691,17 @@ button.sub-menu-toggle {
 .woocommerce-pagination .page-numbers{
 
     a {
-        border: 1px solid $color__primary;
+        background-color: $color__button__background;
+        border: 1px solid $color__button__border-color;
         border-radius: 4px;
-        color: $color__body-copy;
+        color: $color__button__text;
         padding: 1rem 1.2rem;
         text-decoration: none;
 
         &:focus,
         &:hover {
-            color: #FFF;
-            background-color: $color__primary;
+            color: $color__button__text--hover;
+            background-color: $color__button__background--hover;
         }
 
         &.next svg,
@@ -717,10 +718,10 @@ button.sub-menu-toggle {
     }
 
     span.current {
-        border: 1px solid $color__primary;
+        background-color: $color__button__background;
+        border: 1px solid $color__button__border-color;
         border-radius: 4px;
-        color: #FFF;
-        background-color: $color__primary;
+        color: $color__button__text;
         padding: 1rem 1.2rem;
     }
 }
