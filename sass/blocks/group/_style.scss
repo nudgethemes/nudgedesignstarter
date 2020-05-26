@@ -1,0 +1,35 @@
+.wp-block-group {
+
+	clear: both;
+
+	@include vertical-block-gap();
+
+	.wp-block-group__inner-container {
+		margin-left: auto;
+		margin-right: auto;
+
+		> * {
+			margin-top: $spacing-default;
+			margin-bottom: $spacing-default;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.has-background {
+		padding: 2rem;
+
+		@media #{$media_query_at_least_tablet} {
+			padding: 4rem;
+		}
+		@media #{$media_query_at_least_desktop} {
+			padding: 8rem 4rem;
+		}
+	}
+}

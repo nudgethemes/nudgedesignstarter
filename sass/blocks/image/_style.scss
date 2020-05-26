@@ -1,0 +1,64 @@
+//layout
+
+//make sure top level images are centered - overwrite some default styles
+.entry-content > .wp-block-image{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//don't restrict size of aligned resized images
+.entry-content .wp-block-image .alignleft.is-resized,
+.entry-content .wp-block-image .alignright.is-resized{
+	max-width: $max-content-width;
+}
+
+.wp-block-image{
+	.aligncenter,
+	.alignleft,
+	.alignright{
+
+		display: table;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.alignleft{
+		/*rtl:ignore*/
+		margin-right: 1rem;
+	}
+	.alignright{
+		/*rtl:ignore*/
+		margin-left: 1rem;
+	}
+}
+
+.wp-block-image {
+	text-align: center;
+
+	figcaption {
+		font-size: $font__size--smallest;
+		text-align: center;
+	}
+}
+
+// Remove vertical margins from image block wrappers when floated
+.entry-content > .wp-block-image,
+.entry-content [class*="inner-container"] > .wp-block-image {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	// Remove top margins from the following element when previous image block is floated
+	& + * {
+		margin-top: 0;
+	}
+}
+
+.wp-block-image{
+	.aligncenter,
+	.alignleft,
+	.alignright,
+	.is-resized {
+		> figcaption {
+			display: block;
+		}
+	}
+}

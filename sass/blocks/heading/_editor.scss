@@ -1,0 +1,124 @@
+.wp-block-heading h1, h1, .h1,
+.wp-block-heading h2, h2, .h2,
+.wp-block-heading h3, h3, .h3,
+.wp-block-heading h4, h4, .h4,
+.wp-block-heading h5, h5, .h5,
+.wp-block-heading h6, h6, .h6 {
+	font-family: $font__heading;
+	font-weight: bold;
+	clear: both;
+}
+h1,.h1,
+.wp-block-heading h1,
+.heading-size-1 {
+	font-size: ($font__size--h1 / 1.6 / 1.44);
+	font-weight: 800;
+	line-height: $line__height--h1;
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h1 / 1.6  / 1.2);
+	}
+
+	@media #{$media_query_at_least_laptop} {
+		font-size: ($font__size--h1 / 1.6) ;
+	}
+}
+h2,.h2,
+.wp-block-heading h2,
+.heading-size-2 {
+	font-size: ($font__size--h2 / 1.6  / 1.2);
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h2 / 1.6) ;
+	}
+}
+
+h3,.h3,
+.wp-block-heading h3,
+.heading-size-3 {
+	font-size: ($font__size--h3 / 1.6  / 1.2);
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h3 / 1.6) ;
+	}
+}
+
+h4,.h4,
+.wp-block-heading h4,
+.heading-size-4 {
+	font-size: ($font__size--h4 / 1.6  / 1.2);
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h4 / 1.6) ;
+	}
+}
+
+h5,.h5,
+.wp-block-heading h5,
+.heading-size-5 {
+	font-size: ($font__size--h4 / 1.6  / 1.2);
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h4 / 1.6) ;
+	}
+}
+
+h6,.h6,
+.wp-block-heading h6,
+.heading-size-6 {
+	text-transform: uppercase;
+
+	@media #{$media_query_at_least_tablet}{
+		font-size: ($font__size--h6 / 1.6) ;
+	}
+}
+
+@media #{$media_query_at_least_tablet}{
+
+	/* TITLES */
+
+	h1,.h1,
+	.wp-block-heading h1,
+	.heading-size-1,
+	h2,.h2,
+	.wp-block-heading h2,
+	.heading-size-2,
+	h3,.h3,
+	.wp-block-heading h3,
+	.heading-size-3 {
+		margin: (6rem / 1.6)  auto (3rem / 1.6) ;
+	}
+
+	h4,.h4,
+	.wp-block-heading h4,
+	.heading-size-4,
+	h5,.h5,
+	.wp-block-heading h5,
+	.heading-size-5,
+	h6,.h6,
+	.wp-block-heading h6,
+	.heading-size-6 {
+		margin: (4.5rem / 1.6)  auto (2.5rem / 1.6) ;
+	}
+}
+
+@media #{$media_query_at_least_tablet}{
+
+	h1,.h1,
+	h2,.h2,
+	h3,.h3,
+	.wp-block-heading h1,
+	.wp-block-heading h2,
+	.wp-block-heading h3 {
+		margin: (6rem / 1.6)  auto (3rem / 1.6) ;
+	}
+
+	h4,.h4,
+	.wp-block-heading h4,
+	h5,.h5,
+	.wp-block-heading h5,
+	h6,.h6,
+	.wp-block-heading h6 {
+		margin: (4.5rem / 1.6)  auto (2.5rem / 1.6) ;
+	}
+}

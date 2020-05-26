@@ -1,0 +1,189 @@
+
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+//star rating block
+.wp-block-jetpack-rating-star path {
+	fill: $color__woo_star;
+	stroke: $color__woo_star;
+	stroke-width: 1px;
+}
+.wp-block-jetpack-rating-star path.is-rating-unfilled {
+	fill-opacity: 1;
+	stroke: $color__primary;
+	fill: none;
+}
+
+/**
+ * Cookies & Consents Banner
+ */
+body {
+	.widget_eu_cookie_law_widget {
+		background: transparent;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
+		right: 0;
+
+		&.widget.top {
+			bottom: auto;
+			top: 0;
+		};
+
+		#eu-cookie-law {
+			background: $color__background;
+			border: 1px solid $color__primary;
+			color: $color__body-copy;
+			font-size: $font__size--small;
+			line-height: inherit;
+			padding: $spacing-default;
+
+			@media (max-width: 600px) {
+				padding-bottom: 10rem;
+			}
+
+			&.negative {
+				background: $color__body-copy;
+				border-color: $color__primary;
+				color: $color__background;
+
+				input.accept {
+					background: $color__background;
+					color: $color__body-copy;
+
+					&:hover,
+					&:focus,
+					&.has-focus {
+						background: $color__primary;
+					}
+				}
+			}
+
+			input.accept {
+				margin: 0;
+				margin-left: $spacing-wider;
+
+				@include button-style();
+
+				@media (max-width: 600px) {
+					bottom: $spacing-default;
+					left: $spacing-default;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	// Position of the widget when Admin Bar is present
+	&.admin-bar .widget_eu_cookie_law_widget {
+		&.widget.top {
+			top: 32px;
+
+			@media (max-width: 782px) {
+				top: 46px;
+			}
+		}
+	}
+}
+
+/**
+ * Mailchimp Subscription Form
+ */
+.wp-block-jetpack-mailchimp {
+	p {
+		margin-top: $spacing-default;
+		margin-bottom: $spacing-default;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	input[type=email] {
+		width: 100%;
+	}
+}
+
+#wp-block-jetpack-mailchimp_consent-text {
+	font-size: $font__size--small;
+}
+
+/**
+ * Business Hours
+ */
+
+.jetpack-business-hours {
+	dd {
+		padding-left: 0;
+	}
+}
+
+.grunion-field-wrap {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+
+	label:not(.textarea) {
+		order: 2;
+	}
+
+	&.grunion-field-textarea-wrap {
+		margin-top: 4rem;
+	}
+}
+
+/**
+ * Related Posts
+ */
+div#jp-relatedposts {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//see blocks/list
+.wp-block-jetpack-timeline{
+
+}
+
+.entry-content > .wp-block-jetpack-gif{
+	margin-left: auto;
+	margin-right: auto;
+}
+//first level right
+.entry-content > .alignright {
+	margin-right: 2rem;
+
+	@media #{$media_query_at_least_tablet}{
+		/*rtl:ignore*/
+		margin-right: calc((100% - #{$max-content-width}) / 2);
+	}
+}
+//first level left
+.entry-content > .alignleft {
+
+	margin-left: 2rem;
+
+	@media #{$media_query_at_least_tablet}{
+		/*rtl:ignore*/
+		margin-left: calc((100% - #{$max-content-width}) / 2);
+	}
+}

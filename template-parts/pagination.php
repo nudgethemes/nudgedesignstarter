@@ -1,11 +1,11 @@
 <?php
 /**
- * A template partial to output pagination for the Twenty Twenty default theme.
+ * A template partial to output pagination for the Nudgedesignstarter default theme.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
@@ -16,14 +16,14 @@
  */
 
 $prev_text = sprintf(
-	'%s <span class="nav-prev-text">%s</span>',
-	'<span aria-hidden="true">&larr;</span>',
-	__( 'Newer <span class="nav-short">Posts</span>', 'twentytwenty' )
+	'%s <span class="nav-prev-text screen-reader-text">%s</span>',
+	'<span aria-hidden="true">' . nudgedesignstarter_get_theme_svg( 'chevron-left' ) . '</span>',
+	__( 'Newer <span class="nav-short">Posts</span>', 'nudgedesignstarter' )
 );
 $next_text = sprintf(
-	'<span class="nav-next-text">%s</span> %s',
-	__( 'Older <span class="nav-short">Posts</span>', 'twentytwenty' ),
-	'<span aria-hidden="true">&rarr;</span>'
+	'<span class="nav-next-text screen-reader-text">%s</span> %s',
+	__( 'Older <span class="nav-short">Posts</span>', 'nudgedesignstarter' ),
+	'<span aria-hidden="true">' . nudgedesignstarter_get_theme_svg( 'chevron-right' ) . '</span>'
 );
 
 $posts_pagination = get_the_posts_pagination(
@@ -47,8 +47,6 @@ if ( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
 if ( $posts_pagination ) { ?>
 
 	<div class="pagination-wrapper section-inner">
-
-		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
 
 		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
 

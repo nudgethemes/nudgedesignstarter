@@ -1,0 +1,14 @@
+.wp-block-code {
+		border: 0.1rem solid $color__border-color--light;
+		font-family: monospace;
+		font-size: 0.9em;
+		line-height: 1.5;
+		margin: 4rem 0;
+		overflow: auto;
+		padding: 3rem 2rem;
+		text-align: left;
+
+	@media #{$media_query_at_least_tablet}{
+		padding: 3rem;
+	}
+}

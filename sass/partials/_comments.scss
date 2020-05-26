@@ -36,11 +36,11 @@
         margin-bottom: 6rem;
 
         small {
-            display: block;
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin: 0.5rem 0 0 0;
-            white-space: nowrap;
+                display: block;
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin: 0.5rem 0 0 0;
+                white-space: nowrap;
 
             a {
                 text-decoration: none;
@@ -286,12 +286,12 @@ div.comment:first-of-type {
     .logged-in-as {
 
         @media #{$media_query_at_least_desktop} {
-            color: #6d6d6d;
-            font-size: 1.6rem;
-            line-height: 1.4;
-            margin: -3rem 0 4rem 0;
-            text-align: center;
-        }
+        color: #6d6d6d;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        margin: -3rem 0 4rem 0;
+        text-align: center;
+            }
 
         a {
             color: inherit;
@@ -467,7 +467,7 @@ div.comment:first-of-type {
     font-size: 1.8rem;
     padding-left: 7.5rem;
 
-    & > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+   & > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
         @media #{$media_query_at_least_desktop} {
             width: 100%;
         }
@@ -493,11 +493,21 @@ div.comment:first-of-type {
 
 .comment-reply-link {
 
-    @media #{$media_query_at_least_desktop} {
-        border: 1px solid $color__body-copy;
-        color: $color__body-copy;
-        display: block;
-        padding: 0.7rem;
+    border: 1px solid $color__body-copy;
+    border-radius: 3px;
+    color: $color__body-copy;
+    display: block;
+    padding: 0.7rem;
+
+    //stronger selector
+    .comment-footer-meta &{
+        &:hover,
+        &:focus,
+        &.has-focus {
+            background-color: $color__body-copy;
+            color: #fff;
+            text-decoration: none;
+        }
     }
 }
 
@@ -543,6 +553,7 @@ div.comment:first-of-type {
         margin: 3rem 0 6rem;
     }
 }
+
 
 .comment-form-url {
     clear: both;

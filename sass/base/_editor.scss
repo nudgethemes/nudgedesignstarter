@@ -1,0 +1,26 @@
+body {
+
+	background: #FFF;
+	color: $color__body-copy;
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+
+	font-family: $font_body;
+	font-size: 20px;
+}
+
+// Links styles
+a {
+	color: $color__primary;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+button,
+a {
+	cursor: pointer;
+}
+

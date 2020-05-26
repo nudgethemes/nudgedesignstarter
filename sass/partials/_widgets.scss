@@ -7,19 +7,25 @@
 
 /* Widget Base ------------------------------- */
 
+.widget-content > div > *:first-child {
+    margin-top: 0;
+}
+
+.widget-content > div > *:last-child {
+    margin-bottom: 0;
+}
+
+
 .widget {
     margin-top: 3rem;
 
-    &:first-child {
-        margin-top: 0;
+    .widget-title {
+        font-size: 2rem;
+        margin: 0 0 2rem;
     }
 
-    .widget-title {
-        margin: 0 0 2rem;
-
-        @media ( min-width: 700px ) {
-            margin-bottom: 3rem;
-        }
+    &:first-child {
+        margin-top: 0;
     }
 
     li {
@@ -34,11 +40,12 @@
 
     table,
     table * {
-        border-color: #dedfdf;
+        border-color: $color__border;
     }
 
-    table caption {
-        background-color: #dedfdf;
+    caption {
+        background-color: $color__primary;
+        color: #FFF;
     }
 
     .post-date,
@@ -46,7 +53,6 @@
         color: #6d6d6d;
         display: block;
         font-size: 0.85em;
-        font-weight: 500;
         margin-top: 0.2rem;
     }
 
@@ -55,32 +61,19 @@
     }
 }
 
-.widget-content {
-
-    > div > *:first-child {
-        margin-top: 0;
-    }
-
-    > div > *:last-child {
-        margin-bottom: 0;
-    }
-}
 
 /* Base List Widget -------------------------- */
 
-.widget_archive,
-.widget_categories,
-.widget_pages,
-.widget_meta,
-.widget_nav_menu,
-.widget_recent_comments,
-.widget_recent_entries,
-.widget_rss {
-
-    ul {
-        list-style: none;
-        margin: 0;
-    }
+.widget_archive ul,
+.widget_categories ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+    list-style: none;
+    margin: 0;
 }
 
 .widget_archive,
@@ -90,50 +83,24 @@
 .widget_nav_menu {
 
     li {
-        color: #6d6d6d;
-        margin: 0.3rem 0;
+        color: $color__body-copy;
+        margin: 1rem 0;
     }
-}
-
-.widget_archive,
-.widget_categories,
-.widget_pages,
-.widget_meta,
-.widget_nav_menu {
 
     li li {
         margin-left: 2rem;
     }
-}
-
-.widget_archive,
-.widget_categories,
-.widget_pages,
-.widget_meta,
-.widget_nav_menu {
 
     a {
-        font-weight: 700;
         text-decoration: none;
+
+        &:focus,
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 
-.widget_archive,
-.widget_archive,
-.widget_categories,
-.widget_categories,
-.widget_pages,
-.widget_pages,
-.widget_meta,
-.widget_meta,
-.widget_nav_menu,
-.widget_nav_menu {
-
-    a:hover,
-    a:focus {
-        text-decoration: underline;
-    }
-}
 
 /* Widget: Calendar -------------------------- */
 
@@ -164,22 +131,19 @@
     tfoot #next {
         text-align: right;
     }
-
 }
+
 
 /* Widget: Gallery --------------------------- */
 
-.widget_media_gallery {
+.widget_media_gallery .gallery {
+    margin: 0 -0.4em -0.8em -0.4em;
+    width: calc(100% + 0.8em);
+}
 
-    .gallery {
-        margin: 0 -0.4em -0.8em -0.4em;
-        width: calc(100% + 0.8em);
-    }
-
-    .gallery-item {
-        margin: 0 0 0.8em 0;
-        padding: 0 0.4em;
-    }
+.widget_media_gallery .gallery-item {
+    margin: 0 0 0.8em 0;
+    padding: 0 0.4em;
 }
 
 /* Widget: Nav Menu -------------------------- */
@@ -188,17 +152,10 @@
     margin-left: 0;
 }
 
-/* Widget: Recent Comments ------------------- */
+/* Widget: Recent Entries -------------------- */
 
-.widget_recent_comments {
-
-    li {
-        font-weight: 700;
-    }
-
-    a {
-        text-decoration: none;
-    }
+.widget_recent_entries a {
+    text-decoration: none;
 
     &:focus,
     &:hover {
@@ -207,31 +164,12 @@
 }
 
 
-/* Widget: Recent Entries -------------------- */
-
-.widget_recent_entries {
-
-    a {
-        font-weight: 700;
-        text-decoration: none;
-
-        &:focus,
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
 /* Widget: RSS ------------------------------- */
 
 .widget_rss {
 
     .widget-title a.rsswidget:first-of-type {
         display: none;
-    }
-
-    .rsswidget {
-        font-weight: 700;
     }
 
     a {
@@ -252,22 +190,15 @@
     }
 }
 
-/* Widget: Search ---------------------------- */
-
-.widget_search .search-field {
-    border-color: #dedfdf;
-}
-
 /* Widget: Tag Cloud ------------------------- */
 
 .widget_tag_cloud a {
-    font-weight: 700;
     margin-right: 0.5rem;
     text-decoration: none;
     white-space: nowrap;
-}
 
-.widget_tag_cloud a:focus,
-.widget_tag_cloud a:hover {
-    text-decoration: underline;
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
 }

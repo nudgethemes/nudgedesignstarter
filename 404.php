@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying the 404 template in the Nudgedesignstarter theme.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
@@ -14,14 +14,15 @@ get_header();
 
 	<div class="section-inner thin error404-content">
 
-		<h1 class="entry-title"><?php esc_html_e( 'Page Not Found', 'twentytwenty' ); ?></h1>
+		<h1 class="entry-title"><?php esc_html_e( 'Whoops!', 'nudgedesignstarter' ); ?></h1>
+		<h2><?php esc_html_e( 'Something went wrong.', 'nudgedesignstarter' ); ?></h2>
 
-		<div class="intro-text"><p><?php esc_html_e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
+		<div class="intro-text"><p><?php esc_html_e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'nudgedesignstarter' ); ?></p></div>
 
 		<?php
 		get_search_form(
 			array(
-				'label' => __( '404 not found', 'twentytwenty' ),
+				'label' => __( '404 not found', 'nudgedesignstarter' ),
 			)
 		);
 		?>
@@ -29,8 +30,6 @@ get_header();
 	</div><!-- .section-inner -->
 
 </main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php
 get_footer();

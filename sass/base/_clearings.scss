@@ -1,0 +1,25 @@
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after{
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6,
+hr,
+.wp-block-group,
+.clear:after,
+.entry-content:after,
+.group::after,
+.comment-content:after{
+	clear: both;
+}

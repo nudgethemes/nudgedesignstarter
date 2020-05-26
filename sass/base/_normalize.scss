@@ -1,0 +1,366 @@
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  background: #FFF;
+  box-sizing: border-box;
+  color:  $color__body-copy;
+  font-family: $font_body;
+  font-size: 2rem;
+  text-align: left;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+main {
+  display: block;
+}
+
+p {
+  line-height: 1.55;
+  margin: 0 0 1em 0;
+}
+
+em,
+i,
+q,
+dfn {
+  font-style: italic;
+}
+
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+  font-weight: bolder;
+}
+
+big {
+  font-size: 1.2em;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+abbr,
+acronym {
+  cursor: help;
+}
+
+address {
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+}
+
+hr {
+  border-style: solid;
+  border-width: 0.1rem 0 0 0;
+  border-color: #dcd7ca;
+  margin: 2rem 0;
+
+  @media #{$media_query_at_least_tablet}{
+
+    margin: 4rem auto;
+  }
+}
+
+.entry-content hr,
+hr.styled-separator:not(.is-style-dots) {
+  background: linear-gradient(currentColor 0 , currentColor 100%);
+  background-color: transparent !important;
+  border: none;
+  height: 2px;
+  overflow: visible;
+  position: relative;
+}
+
+.entry-content hr:not(.has-background),
+hr.styled-separator {
+  color: #6d6d6d;
+}
+
+a {
+  color: $color__primary;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+
+/* Lists ------------------------------------- */
+
+ul,
+ol {
+  margin: 0 0 3rem 3rem;
+
+  @media ( max-width: 479px ) {
+    margin: 0 0 3rem 2rem;
+  }
+
+  @media #{$media_query_at_least_tablet}{
+    margin-bottom: 4rem;
+  }
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul {
+  list-style: circle;
+}
+
+ul ul ul {
+  list-style: square;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol ol {
+  list-style: lower-alpha;
+}
+
+ol ol ol {
+  list-style: lower-roman;
+}
+
+li {
+  line-height: 1.5;
+  margin: 0.5rem 0 0 2rem;
+
+  @media ( max-width: 479px ) {
+    margin: 0.5rem 0 0 1rem;
+  }
+}
+
+li > ul,
+li > ol {
+  margin: 1rem 0 0 2rem;
+}
+
+.reset-list-style,
+.reset-list-style ul,
+.reset-list-style ol {
+  list-style: none;
+  margin: 0;
+}
+
+.reset-list-style li {
+  margin: 0;
+}
+
+dt,
+dd {
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dt + dd {
+  margin-top: 0.5rem;
+}
+
+dd + dt {
+  margin-top: 1.5rem;
+}
+
+
+
+
+/* Code -------------------------------------- */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 0.9em;
+  padding: 0.4rem 0.6rem;
+}
+
+code,
+kbd,
+samp {
+  background: rgba(0, 0, 0, 0.075);
+  border-radius: 0.2rem;
+}
+
+pre {
+  border: 1px solid $color__border-color--light;
+  border-radius: 3px;
+  color: $color__body-copy;
+  line-height: 1.5;
+  margin: 4rem 0;
+  overflow: auto;
+  padding: 3rem 2rem;
+  text-align: left;
+
+  @media #{$media_query_at_least_tablet}{
+    padding: 3rem;
+  }
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+
+/* Media ------------------------------------- */
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+video {
+  display: block;
+}
+
+svg,
+img,
+embed,
+object {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figcaption,
+.wp-caption-text {
+  display: block;
+  font-size: $font__size--smallest;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+
+  @media #{$media_query_at_least_tablet}{
+    margin-top: 1.8rem;
+  }
+  a{
+    color: inherit;
+  }
+}
+
+
+/* GALLERIES */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3em 0 3em -0.8em;
+  width: calc(100% + 1.6em);
+}
+
+.gallery-item {
+  margin: 0.8em 0;
+  padding: 0 0.8em;
+  width: 100%;
+}
+
+.gallery-caption {
+  display: block;
+  margin-top: 0.8em;
+}
+
+
+/* Tables ------------------------------------ */
+
+table {
+  border: 0.1rem solid #dcd7ca;
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  font-size: 1.6rem;
+  margin: 4rem 0;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+
+  @media #{$media_query_at_least_tablet}{
+    font-size: 1.8rem;
+  }
+}
+
+.alignleft > table {
+  margin: 0;
+}
+
+.alignright > table {
+  margin: 0;
+}
+
+th,
+td {
+  border: 0.1rem solid #dcd7ca;
+  line-height: 1.4;
+  margin: 0;
+  overflow: visible;
+  padding: 0.5em;
+}
+
+caption {
+  background: #dcd7ca;
+  font-weight: 600;
+  padding: 0.5em;
+  text-align: center;
+}
+
+thead {
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+th {
+  font-weight: 700;
+}

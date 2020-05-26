@@ -1,0 +1,18 @@
+.wp-block-gallery {
+
+	margin: 0;
+
+	// Apply max-width to floated items that have no intrinsic width.
+	&.alignleft,
+	&.alignright {
+		max-width: 50%;
+
+		@media #{$media_query_at_least_tablet}{
+			max-width: 34rem;
+		}
+	}
+
+	&.aligncenter{
+		display: flex;
+	}
+}

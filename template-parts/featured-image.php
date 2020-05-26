@@ -3,35 +3,38 @@
  * Displays the featured image
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
-if ( has_post_thumbnail() && ! post_password_required() ) {
-
-	$featured_media_inner_classes = '';
-
-	// Make the featured media thinner on archive pages.
-	if ( ! is_singular() ) {
-		$featured_media_inner_classes .= ' medium';
-	}
-	?>
+if ( has_post_thumbnail() && ! post_password_required() ) { ?>
 
 	<figure class="featured-media">
 
-		<div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+		<div class="featured-media-inner">
 
-			<?php
-			the_post_thumbnail();
+			<?php if ( ! is_singular() ) { ?>
 
-			$caption = get_the_post_thumbnail_caption();
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
-			if ( $caption ) {
-				?>
+					<?php the_post_thumbnail( 'nudgedesignstarter-post-archive' ); ?>
 
-				<figcaption class="wp-caption-text"><?php echo esc_html( $caption ); ?></figcaption>
+				</a>
 
 				<?php
+			} else {
+
+				the_post_thumbnail();
+
+				$caption = get_the_post_thumbnail_caption();
+
+				if ( $caption ) {
+					?>
+
+					<figcaption class="wp-caption-text"><?php echo esc_html( $caption ); ?></figcaption>
+
+					<?php
+				}
 			}
 			?>
 

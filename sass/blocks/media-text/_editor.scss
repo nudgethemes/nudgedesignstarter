@@ -1,0 +1,12 @@
+.wp-block-media-text {
+	.block-editor-inner-blocks {
+		padding-right: $spacing-default;
+		padding-left: $spacing-default;
+	}
+
+	&[style*="background-color"]:not(.has-background-background-color) {
+		a {
+			color: currentColor;
+		}
+	}
+}

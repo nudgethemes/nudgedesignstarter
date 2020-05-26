@@ -7,11 +7,13 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
 ?>
+			<?php get_sidebar(); ?>
+
 			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
 				<div class="section-inner">
@@ -30,38 +32,58 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo( 'name' ); ?></a>
 						</p><!-- .footer-copyright -->
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.com/', 'nudgedesignstarter' ) ); ?>" class="imprint">
-								<?php
-								/* translators: %s: WordPress. */
-								printf( esc_html__( 'Proudly powered by %s.', 'nudgedesignstarter' ), 'WordPress' );
-								?>
-							</a>
-							<a href="<?php echo esc_url( __( 'https://pressable.com/?utm_source=Automattic&utm_medium=rpc&utm_campaign=Concierge%20Referral&utm_term=concierge', 'rivington' ) ); ?>" class="imprint">
-								<?php
-								/* translators: %s: Pressable. */
-								printf( esc_html__( 'Hosted by %s.', 'nudgedesignstarter' ), 'Pressable' );
-								?>
-							</a>
+							<?php
 
-						</p><!-- .powered-by-wordpress -->
+							$nudgedesignstarter_footer_credit = get_theme_mod( 'nudgedesignstarter_footer_credit', nudgedesignstarter_get_default_footer_credit() );
+
+							if ( '' !== $nudgedesignstarter_footer_credit ) {
+								?>
+								<p class="powered-by-wordpress">
+								<?php
+									echo wp_kses_post( $nudgedesignstarter_footer_credit );
+								?>
+								</p><!-- .powered-by-wordpress -->
+								<?php
+							}
+							?>
 
 					</div><!-- .footer-credits -->
 
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow */
-							printf( esc_html__( 'To the top %s', 'nudgedesignstarter' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow */
-							printf( esc_html__( 'Up %s', 'nudgedesignstarter' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
+					<?php
+					$has_social_menu = has_nav_menu( 'social' );
+
+					if ( $has_social_menu ) {
+						?>
+						<div class="footer-social-section">
+
+							<nav aria-label="<?php esc_attr_e( 'Social links', 'nudgedesignstarter' ); ?>" class="footer-social-wrapper">
+
+								<ul class="social-menu footer-social reset-list-style social-icons fill-children-current-color">
+
+									<?php
+									wp_nav_menu(
+										array(
+											'theme_location' => 'social',
+											'container'   => '',
+											'container_class' => '',
+											'items_wrap'  => '%3$s',
+											'menu_id'     => '',
+											'menu_class'  => '',
+											'depth'       => 1,
+											'link_before' => '<span class="screen-reader-text">',
+											'link_after'  => '</span>',
+											'fallback_cb' => '',
+										)
+									);
+									?>
+
+								</ul><!-- .footer-social -->
+
+							</nav><!-- .footer-social-wrapper -->
+
+						</div><!-- .footer-top -->
+
+					<?php } ?>
 
 				</div><!-- .section-inner -->
 

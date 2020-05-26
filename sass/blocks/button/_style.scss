@@ -1,0 +1,43 @@
+/**
+ * Button
+ */
+.wp-block-button__link,
+.wp-block-file__button {
+	@include button-style();
+}
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+
+	// Outline Style
+	&:not(.has-background).is-style-outline {
+
+		.wp-block-button__link:not(.has-background) {
+
+			background-color: transparent;
+
+			&:not(.has-text-color) {
+				color: $color__primary;
+			}
+
+			&:hover,
+			&:focus,
+			&.has-focus {
+				background-color: $color__primary;
+				border-color: $color__primary;
+				color: $color__background;
+			}
+		}
+	}
+
+	.is-style-outline .wp-block-button__link:not(.has-text-color) {
+		color: inherit;
+	}
+
+	// Squared Style
+	&.is-style-squared .wp-block-button__link {
+		border-radius: 0;
+	}
+}

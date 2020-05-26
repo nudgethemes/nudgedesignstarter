@@ -1,0 +1,22 @@
+//alignment
+.wp-block-table.alignleft,
+.wp-block-table.alignright {
+
+	@media ( min-width: 480px ) {
+		max-width: 100%;
+	}
+}
+
+table,
+.wp-block-table {
+    width: 100%;
+    min-width: 240px;
+    border-collapse: collapse;
+
+	td,
+	th {
+		padding: $spacing-compact;
+		border: 1px solid;
+		word-break: break-all;
+	}
+}

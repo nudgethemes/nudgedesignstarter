@@ -1,0 +1,37 @@
+
+ul {
+	&.wp-block-archives-list,
+	&.wp-block-categories-list,
+	&.wp-block-jetpack-timeline,
+	&.wp-block-rss{
+
+		list-style: none;
+		margin-bottom: $spacing-default;
+		margin-top: 0;
+
+		ul{
+			list-style: none;
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-top: 0;
+		}
+
+		li {
+			color: $color__body-copy;
+			margin: 1rem 0;
+		}
+
+		li li {
+			margin-left: 2rem;
+		}
+
+		a {
+			text-decoration: none;
+
+			&:focus,
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+}

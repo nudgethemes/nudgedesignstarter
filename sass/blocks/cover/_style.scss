@@ -1,0 +1,87 @@
+.wp-block-cover,
+.wp-block-cover-image {
+
+	color: $wp-cover__text-color;
+	background-color: $wp-cover__background-color;
+	margin: inherit;
+
+	@include vertical-block-gap();
+
+	.wp-block-cover__inner-container,
+	.wp-block-cover-image-text,
+	.wp-block-cover-text {
+		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
+		margin-top: $spacing-default;
+		margin-bottom: $spacing-default;
+
+		a:not(.wp-block-button__link) {
+			color: currentColor;
+		}
+	}
+
+	/* default & custom background-color */
+	&:not([class*='background-color']){
+		.wp-block-cover__inner-container,
+		.wp-block-cover-image-text,
+		.wp-block-cover-text {
+			color: $wp-cover__text-color;
+		}
+	}
+
+	/* Treating H2 separately to account for legacy /core styles */
+	h2 {
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
+	}
+
+	.wp-block-cover__inner-container {
+		margin-left: auto;
+		margin-right: auto;
+		width: calc(100% - 8rem);
+
+		& > * {
+			margin-top: $spacing-default;
+			margin-bottom: $spacing-default;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	/**
+	 * Block Options
+	 */
+	&.alignleft,
+	&.alignright {
+		margin-top: 0;
+		max-width: 50%;
+
+		> * {
+			margin-top: $spacing-wider;
+			margin-bottom: $spacing-wider;
+			padding-left: $spacing-default;
+			padding-right: $spacing-default;
+			width: 100%;
+		}
+	}
+
+	&.has-left-content,
+	&.has-right-content {
+		justify-content: center;
+	}
+}

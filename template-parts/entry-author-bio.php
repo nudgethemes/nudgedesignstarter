@@ -3,7 +3,7 @@
  * The template for displaying Author info
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
@@ -13,11 +13,11 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 		<div class="author-avatar vcard">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 160 ); ?>
 		</div>
-		<h2 class="author-title heading-size-4">
+		<h2 class="author-title heading-size-5">
 			<?php
 			printf(
 				/* translators: %s: Author name */
-				esc_html__( 'By %s', 'twentytwenty' ),
+				esc_html__( 'By %s', 'nudgedesignstarter' ),
 				esc_html( get_the_author() )
 			);
 			?>
@@ -26,7 +26,7 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 	<div class="author-description">
 		<?php echo wp_kses_post( wpautop( get_the_author_meta( 'description' ) ) ); ?>
 		<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-			<?php esc_html_e( 'View Archive <span aria-hidden="true">&rarr;</span>', 'twentytwenty' ); ?>
+			<?php esc_html_e( 'View Archive', 'nudgedesignstarter' ); ?> <span class="link-icon" aria-hidden="true"> <?php nudgedesignstarter_the_theme_svg( 'chevron-right' ); ?></span>
 		</a>
 	</div><!-- .author-description -->
 </div><!-- .author-bio -->

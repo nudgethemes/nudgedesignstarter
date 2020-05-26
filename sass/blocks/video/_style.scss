@@ -1,0 +1,16 @@
+.wp-block-video {
+
+	figcaption {
+		color: $color__background;
+		font-size: $font__size--smallest;
+		margin-top: $spacing-compact;
+		margin-bottom: $spacing-default;
+		text-align: center;
+	}
+}
+
+* > figure > video {
+	max-width: unset;
+	width: 100%;
+	vertical-align: middle;
+}

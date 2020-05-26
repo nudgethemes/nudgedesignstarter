@@ -3,7 +3,7 @@
  * Custom template tags for this theme.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
@@ -29,7 +29,7 @@
  *
  * @return string $html Compiled HTML based on our arguments.
  */
-function twentytwenty_site_logo( $args = array(), $echo = true ) {
+function nudgedesignstarter_site_logo( $args = array(), $echo = true ) {
 	$logo       = get_custom_logo();
 	$site_title = get_bloginfo( 'name' );
 	$contents   = '';
@@ -48,12 +48,12 @@ function twentytwenty_site_logo( $args = array(), $echo = true ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	/**
-	 * Filters the arguments for `twentytwenty_site_logo()`.
+	 * Filters the arguments for `nudgedesignstarter_site_logo()`.
 	 *
 	 * @param array  $args     Parsed arguments.
 	 * @param array  $defaults Function's default arguments.
 	 */
-	$args = apply_filters( 'twentytwenty_site_logo_args', $args, $defaults );
+	$args = apply_filters( 'nudgedesignstarter_site_logo_args', $args, $defaults );
 
 	if ( has_custom_logo() ) {
 		$contents  = sprintf( $args['logo'], $logo, esc_html( $site_title ) );
@@ -68,14 +68,14 @@ function twentytwenty_site_logo( $args = array(), $echo = true ) {
 	$html = sprintf( $args[ $wrap ], $classname, $contents );
 
 	/**
-	 * Filters the arguments for `twentytwenty_site_logo()`.
+	 * Filters the arguments for `nudgedesignstarter_site_logo()`.
 	 *
 	 * @param string $html      Compiled html based on our arguments.
 	 * @param array  $args      Parsed arguments.
 	 * @param string $classname Class name based on current view, home or single.
 	 * @param string $contents  HTML for site title or logo.
 	 */
-	$html = apply_filters( 'twentytwenty_site_logo', $html, $args, $classname, $contents );
+	$html = apply_filters( 'nudgedesignstarter_site_logo', $html, $args, $classname, $contents );
 
 	if ( ! $echo ) {
 		return $html;
@@ -90,9 +90,9 @@ function twentytwenty_site_logo( $args = array(), $echo = true ) {
  *
  * @param boolean $echo Echo or return the html.
  *
- * @return string $html The HTML to display.
+ * @return string|void $html The HTML to display.
  */
-function twentytwenty_site_description( $echo = true ) {
+function nudgedesignstarter_site_description( $echo = true ) {
 	$description = get_bloginfo( 'description' );
 
 	if ( ! $description ) {
@@ -112,13 +112,24 @@ function twentytwenty_site_description( $echo = true ) {
 	 * @param string $description  Site description via `bloginfo()`.
 	 * @param string $wrapper      The format used in case you want to reuse it in a `sprintf()`.
 	 */
-	$html = apply_filters( 'twentytwenty_site_description', $html, $description, $wrapper );
+	$html = apply_filters( 'nudgedesignstarter_site_description', $html, $description, $wrapper );
 
 	if ( ! $echo ) {
 		return $html;
 	}
 
 	echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+/**
+ * Returns whether current page title should be hidden
+ * ( checks if page is front page and if customizer setting 'nudgedesignstarter_front_page_title_hidden' is actuveated )
+ *
+ * @return bool
+ */
+function nudgedesignstarter_is_front_page_title_hidden() {
+
+	return is_front_page() && get_theme_mod( 'nudgedesignstarter_front_page_title_hidden', false );
 }
 
 /**
@@ -131,7 +142,7 @@ function twentytwenty_site_description( $echo = true ) {
  *
  * @return bool
  */
-function twentytwenty_is_comment_by_post_author( $comment = null ) {
+function nudgedesignstarter_is_comment_by_post_author( $comment = null ) {
 
 	if ( is_object( $comment ) && $comment->user_id > 0 ) {
 
@@ -157,14 +168,14 @@ function twentytwenty_is_comment_by_post_author( $comment = null ) {
  *
  * @return string $link Link to the top of the page.
  */
-function twentytwenty_filter_comment_reply_link( $link ) {
+function nudgedesignstarter_filter_comment_reply_link( $link ) {
 
 	$link = str_replace( 'class=\'', 'class=\'do-not-scroll ', $link );
 	return $link;
 
 }
 
-add_filter( 'comment_reply_link', 'twentytwenty_filter_comment_reply_link' );
+add_filter( 'comment_reply_link', 'nudgedesignstarter_filter_comment_reply_link' );
 
 /**
  * Post Meta
@@ -176,9 +187,9 @@ add_filter( 'comment_reply_link', 'twentytwenty_filter_comment_reply_link' );
  * @param int    $post_id The ID of the post for which the post meta should be output.
  * @param string $location Which post meta location to output – single or preview.
  */
-function twentytwenty_the_post_meta( $post_id = null, $location = 'single-top' ) {
+function nudgedesignstarter_the_post_meta( $post_id = null, $location = 'single-top' ) {
 
-	echo twentytwenty_get_post_meta( $post_id, $location ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in twentytwenty_get_post_meta().
+	echo nudgedesignstarter_get_post_meta( $post_id, $location ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in nudgedesignstarter_get_post_meta().
 
 }
 
@@ -189,7 +200,7 @@ function twentytwenty_the_post_meta( $post_id = null, $location = 'single-top' )
  * @param int    $post_id Post ID.
  * @param string $text    Anchor text.
  */
-function twentytwenty_edit_post_link( $link, $post_id, $text ) {
+function nudgedesignstarter_edit_post_link( $link, $post_id, $text ) {
 	if ( is_admin() ) {
 		return $link;
 	}
@@ -203,7 +214,7 @@ function twentytwenty_edit_post_link( $link, $post_id, $text ) {
 	$text = sprintf(
 		wp_kses(
 			/* translators: %s: Post title. Only visible to screen readers. */
-			__( 'Edit <span class="screen-reader-text">%s</span>', 'twentytwenty' ),
+			__( 'Edit <span class="screen-reader-text">%s</span>', 'nudgedesignstarter' ),
 			array(
 				'span' => array(
 					'class' => array(),
@@ -213,11 +224,11 @@ function twentytwenty_edit_post_link( $link, $post_id, $text ) {
 		get_the_title( $post_id )
 	);
 
-	return '<div class="post-meta-wrapper post-meta-edit-link-wrapper"><ul class="post-meta"><li class="post-edit meta-wrapper"><span class="meta-icon">' . twentytwenty_get_theme_svg( 'edit' ) . '</span><span class="meta-text"><a href="' . esc_url( $edit_url ) . '">' . $text . '</a></span></li></ul><!-- .post-meta --></div><!-- .post-meta-wrapper -->';
+	return '<div class="post-meta-wrapper post-meta-edit-link-wrapper"><ul class="post-meta"><li class="post-edit meta-wrapper"><span class="meta-icon">' . nudgedesignstarter_get_theme_svg( 'edit' ) . '</span><span class="meta-text"><a href="' . esc_url( $edit_url ) . '">' . $text . '</a></span></li></ul><!-- .post-meta --></div><!-- .post-meta-wrapper -->';
 
 }
 
-add_filter( 'edit_post_link', 'twentytwenty_edit_post_link', 10, 3 );
+add_filter( 'edit_post_link', 'nudgedesignstarter_edit_post_link', 10, 3 );
 
 /**
  * Get the post meta.
@@ -225,7 +236,7 @@ add_filter( 'edit_post_link', 'twentytwenty_edit_post_link', 10, 3 );
  * @param int    $post_id The ID of the post.
  * @param string $location The location where the meta is shown.
  */
-function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' ) {
+function nudgedesignstarter_get_post_meta( $post_id = null, $location = 'single-top' ) {
 
 	// Require post ID.
 	if ( ! $post_id ) {
@@ -241,7 +252,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 	 *
 	 * @param array Array of post types
 	 */
-	$disallowed_post_types = apply_filters( 'twentytwenty_disallowed_post_types_for_meta_output', array( 'page' ) );
+	$disallowed_post_types = apply_filters( 'nudgedesignstarter_disallowed_post_types_for_meta_output', array( 'page' ) );
 	// Check whether the post type is allowed to output post meta.
 	if ( in_array( get_post_type( $post_id ), $disallowed_post_types, true ) ) {
 		return;
@@ -251,31 +262,50 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 	$post_meta_classes         = '';
 
 	// Get the post meta settings for the location specified.
-	if ( 'single-top' === $location ) {
+	if ( 'single-header-top' === $location ) {
+
+		/**
+		 * Filters post tags visibility
+		 *
+		 * Use this filter to hide post meta information like Author
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $args {
+		 *   @type string 'author'
+		 * }
+		 */
+		$post_meta                 = apply_filters(
+			'nudgedesignstarter_post_meta_location_single_header_top',
+			array(
+				'author',
+			)
+		);
+		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-header-top';
+
+	} elseif ( 'single-header-bottom' === $location ) {
 		/**
 		* Filters post meta info visibility
 		*
-		* Use this filter to hide post meta information like Author, Post date, Comments, Is sticky status
+		* Use this filter to hide post meta information like Post date, Comments, Is sticky status
 		*
 		* @since 1.0.0
 		*
 		* @param array $args {
-		*  @type string 'author'
 		*  @type string 'post-date'
 		*  @type string 'comments'
 		*  @type string  'sticky'
 		* }
 		*/
 		$post_meta                 = apply_filters(
-			'twentytwenty_post_meta_location_single_top',
+			'nudgedesignstarter_post_meta_location_single_top',
 			array(
-				'author',
 				'post-date',
 				'comments',
 				'sticky',
 			)
 		);
-		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-top';
+		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-header-bottom';
 
 	} elseif ( 'single-bottom' === $location ) {
 
@@ -291,7 +321,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 		* }
 		*/
 		$post_meta                 = apply_filters(
-			'twentytwenty_post_meta_location_single_bottom',
+			'nudgedesignstarter_post_meta_location_single_bottom',
 			array(
 				'tags',
 			)
@@ -329,7 +359,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *
 				 * @param int   $post_ID Post ID.
 				 */
-				do_action( 'twentytwenty_start_of_post_meta_list', $post_id );
+				do_action( 'nudgedesignstarter_start_of_post_meta_list', $post_id );
 
 				// Author.
 				if ( in_array( 'author', $post_meta, true ) ) {
@@ -337,15 +367,11 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					$has_meta = true;
 					?>
 					<li class="post-author meta-wrapper">
-						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Post author', 'twentytwenty' ); ?></span>
-							<?php twentytwenty_the_theme_svg( 'user' ); ?>
-						</span>
 						<span class="meta-text">
 							<?php
 							printf(
 								/* translators: %s: Author name */
-								esc_html__( 'By %s', 'twentytwenty' ),
+								esc_html__( 'By %s', 'nudgedesignstarter' ),
 								'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a>'
 							);
 							?>
@@ -361,30 +387,8 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					$has_meta = true;
 					?>
 					<li class="post-date meta-wrapper">
-						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Post date', 'twentytwenty' ); ?></span>
-							<?php twentytwenty_the_theme_svg( 'calendar' ); ?>
-						</span>
 						<span class="meta-text">
 							<a href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
-						</span>
-					</li>
-					<?php
-
-				}
-
-				// Categories.
-				if ( in_array( 'categories', $post_meta, true ) && has_category() ) {
-
-					$has_meta = true;
-					?>
-					<li class="post-categories meta-wrapper">
-						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Categories', 'twentytwenty' ); ?></span>
-							<?php twentytwenty_the_theme_svg( 'folder' ); ?>
-						</span>
-						<span class="meta-text">
-							<?php esc_html_x( 'In', 'A string that is output before one or more categories', 'twentytwenty' ); ?> <?php the_category( ', ' ); ?>
 						</span>
 					</li>
 					<?php
@@ -398,8 +402,8 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-tags meta-wrapper">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'twentytwenty' ); ?></span>
-							<?php twentytwenty_the_theme_svg( 'tag' ); ?>
+							<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'nudgedesignstarter' ); ?></span>
+							<?php nudgedesignstarter_the_theme_svg( 'tag' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php the_tags( '', ', ', '' ); ?>
@@ -415,9 +419,6 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					$has_meta = true;
 					?>
 					<li class="post-comment-link meta-wrapper">
-						<span class="meta-icon">
-							<?php twentytwenty_the_theme_svg( 'comment' ); ?>
-						</span>
 						<span class="meta-text">
 							<?php comments_popup_link(); ?>
 						</span>
@@ -433,10 +434,10 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-sticky meta-wrapper">
 						<span class="meta-icon">
-							<?php twentytwenty_the_theme_svg( 'bookmark' ); ?>
+							<?php nudgedesignstarter_the_theme_svg( 'bookmark' ); ?>
 						</span>
 						<span class="meta-text">
-							<?php esc_html_e( 'Sticky post', 'twentytwenty' ); ?>
+							<?php esc_html_e( 'Sticky post', 'nudgedesignstarter' ); ?>
 						</span>
 					</li>
 					<?php
@@ -452,7 +453,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *
 				 * @param int   $post_ID Post ID.
 				 */
-				do_action( 'twentytwenty_end_of_post_meta_list', $post_id );
+				do_action( 'nudgedesignstarter_end_of_post_meta_list', $post_id );
 
 				?>
 
@@ -492,7 +493,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
  *
  * @return array $css_class CSS Class names.
  */
-function twentytwenty_filter_wp_list_pages_item_classes( $css_class, $item, $depth, $args, $current_page ) {
+function nudgedesignstarter_filter_wp_list_pages_item_classes( $css_class, $item, $depth, $args, $current_page ) {
 
 	// Only apply to wp_list_pages() calls with match_menu_classes set to true.
 	$match_menu_classes = isset( $args['match_menu_classes'] );
@@ -515,7 +516,7 @@ function twentytwenty_filter_wp_list_pages_item_classes( $css_class, $item, $dep
 
 }
 
-add_filter( 'page_css_class', 'twentytwenty_filter_wp_list_pages_item_classes', 10, 5 );
+add_filter( 'page_css_class', 'nudgedesignstarter_filter_wp_list_pages_item_classes', 10, 5 );
 
 /**
  * Add a Sub Nav Toggle to the Expanded Menu and Mobile Menu.
@@ -526,7 +527,7 @@ add_filter( 'page_css_class', 'twentytwenty_filter_wp_list_pages_item_classes', 
  *
  * @return stdClass $args An object of wp_nav_menu() arguments.
  */
-function twentytwenty_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
+function nudgedesignstarter_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 
 	// Add sub menu toggles to the Expanded Menu with toggles.
 	if ( isset( $args->show_toggles ) && $args->show_toggles ) {
@@ -539,10 +540,10 @@ function twentytwenty_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 			$toggle_target_string = '.menu-modal .menu-item-' . $item->ID . ' > .sub-menu';
-			$toggle_duration      = twentytwenty_toggle_duration();
+			$toggle_duration      = nudgedesignstarter_toggle_duration();
 
 			// Add the sub menu toggle.
-			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . twentytwenty_get_theme_svg( 'chevron-down' ) . '</button>';
+			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'nudgedesignstarter' ) . '</span>' . nudgedesignstarter_get_theme_svg( 'chevron-down' ) . '</button>';
 
 		}
 
@@ -562,7 +563,7 @@ function twentytwenty_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 
 }
 
-add_filter( 'nav_menu_item_args', 'twentytwenty_add_sub_toggles_to_main_menu', 10, 3 );
+add_filter( 'nav_menu_item_args', 'nudgedesignstarter_add_sub_toggles_to_main_menu', 10, 3 );
 
 /**
  * Display SVG icons in social links menu.
@@ -573,12 +574,12 @@ add_filter( 'nav_menu_item_args', 'twentytwenty_add_sub_toggles_to_main_menu', 1
  * @param  array   $args        wp_nav_menu() arguments.
  * @return string  $item_output The menu item output with social icon.
  */
-function twentytwenty_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+function nudgedesignstarter_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
-		$svg = TwentyTwenty_SVG_Icons::get_social_link_svg( $item->url );
+		$svg = Nudgedesignstarter_SVG_Icons::get_social_link_svg( $item->url );
 		if ( empty( $svg ) ) {
-			$svg = twentytwenty_get_theme_svg( 'link' );
+			$svg = nudgedesignstarter_get_theme_svg( 'link' );
 		}
 		$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output );
 	}
@@ -586,7 +587,7 @@ function twentytwenty_nav_menu_social_icons( $item_output, $item, $depth, $args 
 	return $item_output;
 }
 
-add_filter( 'walker_nav_menu_start_el', 'twentytwenty_nav_menu_social_icons', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'nudgedesignstarter_nav_menu_social_icons', 10, 4 );
 
 /**
  * Classes
@@ -595,7 +596,7 @@ add_filter( 'walker_nav_menu_start_el', 'twentytwenty_nav_menu_social_icons', 10
  * Add No-JS Class.
  * If we're missing JavaScript support, the HTML element will have a no-js class.
  */
-function twentytwenty_no_js_class() {
+function nudgedesignstarter_no_js_class() {
 
 	?>
 	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
@@ -603,7 +604,7 @@ function twentytwenty_no_js_class() {
 
 }
 
-add_action( 'wp_head', 'twentytwenty_no_js_class' );
+add_action( 'wp_head', 'nudgedesignstarter_no_js_class' );
 
 /**
  * Add conditional body classes.
@@ -612,7 +613,7 @@ add_action( 'wp_head', 'twentytwenty_no_js_class' );
  *
  * @return array $classes Classes added to the body tag.
  */
-function twentytwenty_body_classes( $classes ) {
+function nudgedesignstarter_body_classes( $classes ) {
 
 	global $post;
 	$post_type = isset( $post ) ? $post->post_type : false;
@@ -620,16 +621,6 @@ function twentytwenty_body_classes( $classes ) {
 	// Check whether we're singular.
 	if ( is_singular() ) {
 		$classes[] = 'singular';
-	}
-
-	// Check whether the current page should have an overlay header.
-	if ( is_page_template( array( 'templates/template-cover.php' ) ) ) {
-		$classes[] = 'overlay-header';
-	}
-
-	// Check whether the current page has full-width content.
-	if ( is_page_template( array( 'templates/template-full-width.php' ) ) ) {
-		$classes[] = 'has-full-width-content';
 	}
 
 	// Check for enabled search.
@@ -672,36 +663,19 @@ function twentytwenty_body_classes( $classes ) {
 	}
 
 	// Check for the elements output in the top part of the footer.
-	$has_footer_menu = has_nav_menu( 'footer' );
-	$has_social_menu = has_nav_menu( 'social' );
-	$has_sidebar_1   = is_active_sidebar( 'sidebar-1' );
-	$has_sidebar_2   = is_active_sidebar( 'sidebar-2' );
+	$has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
 
 	// Add a class indicating whether those elements are output.
-	if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) {
+	if ( $has_sidebar_1 ) {
 		$classes[] = 'footer-top-visible';
 	} else {
 		$classes[] = 'footer-top-hidden';
 	}
 
-	// Get header/footer background color.
-	$header_footer_background = get_theme_mod( 'header_footer_background_color', '#ffffff' );
-	$header_footer_background = strtolower( '#' . ltrim( $header_footer_background, '#' ) );
-
-	// Get content background color.
-	$background_color = get_theme_mod( 'background_color', 'f5efe0' );
-	$background_color = strtolower( '#' . ltrim( $background_color, '#' ) );
-
-	// Add extra class if main background and header/footer background are the same color.
-	if ( $background_color === $header_footer_background ) {
-		$classes[] = 'reduced-spacing';
-	}
-
 	return $classes;
-
 }
 
-add_filter( 'body_class', 'twentytwenty_body_classes' );
+add_filter( 'body_class', 'nudgedesignstarter_body_classes' );
 
 /**
  * Archives
@@ -713,10 +687,10 @@ add_filter( 'body_class', 'twentytwenty_body_classes' );
  *
  * @return string $title Current archive title.
  */
-function twentytwenty_get_the_archive_title( $title ) {
+function nudgedesignstarter_get_the_archive_title( $title ) {
 
 	$regex = apply_filters(
-		'twentytwenty_get_the_archive_title_regex',
+		'nudgedesignstarter_get_the_archive_title_regex',
 		array(
 			'pattern'     => '/(\A[^\:]+\:)/',
 			'replacement' => '<span class="color-accent">$1</span>',
@@ -733,7 +707,7 @@ function twentytwenty_get_the_archive_title( $title ) {
 
 }
 
-add_filter( 'get_the_archive_title', 'twentytwenty_get_the_archive_title' );
+add_filter( 'get_the_archive_title', 'nudgedesignstarter_get_the_archive_title' );
 
 /**
  * Miscellaneous
@@ -743,7 +717,7 @@ add_filter( 'get_the_archive_title', 'twentytwenty_get_the_archive_title' );
  *
  * @return integer Duration in milliseconds
  */
-function twentytwenty_toggle_duration() {
+function nudgedesignstarter_toggle_duration() {
 	/**
 	 * Filters the animation duration/speed used usually for submenu toggles.
 	 *
@@ -751,7 +725,7 @@ function twentytwenty_toggle_duration() {
 	 *
 	 * @param integer $duration Duration in milliseconds.
 	 */
-	$duration = apply_filters( 'twentytwenty_toggle_duration', 250 );
+	$duration = apply_filters( 'nudgedesignstarter_toggle_duration', 250 );
 
 	return $duration;
 }
@@ -771,10 +745,24 @@ function twentytwenty_toggle_duration() {
  * @param string $prefix Prefix for the returned ID.
  * @return string Unique ID.
  */
-function twentytwenty_unique_id( $prefix = '' ) {
+function nudgedesignstarter_unique_id( $prefix = '' ) {
 	static $id_counter = 0;
 	if ( function_exists( 'wp_unique_id' ) ) {
 		return wp_unique_id( $prefix );
 	}
 	return $prefix . (string) ++$id_counter;
+}
+
+/**
+ * @return string
+ */
+function nudgedesignstarter_get_default_footer_credit() {
+	return '<a href="' . esc_url( __( 'https://wordpress.org/', 'nudgedesignstarter' ) ) . '">' .
+			/* translators: %s: WordPress. */
+			sprintf( esc_html__( 'Proudly powered by %s.', 'nudgedesignstarter' ), 'WordPress' ) .
+		'</a>' .
+		'<a href="' . esc_url( __( 'https://nudgethemes.com', 'nudgedesignstarter' ) ) . '">' .
+			/* translators: %s: Pressable. */
+			sprintf( esc_html__( 'Theme by %s.', 'nudgedesignstarter' ), 'Nudge Themes' ) .
+		'</a>';
 }

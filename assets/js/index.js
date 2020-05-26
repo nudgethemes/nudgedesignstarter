@@ -2,10 +2,10 @@
 	Namespace
 --------------------------------------------------------------------------------------------------- */
 
-var twentytwenty = twentytwenty || {};
+var nudgedesignstarter = nudgedesignstarter || {};
 
 // Set a default value for scrolled.
-twentytwenty.scrolled = 0;
+nudgedesignstarter.scrolled = 0;
 
 // polyfill closest
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
@@ -41,7 +41,7 @@ if ( window.NodeList && ! NodeList.prototype.forEach ) {
 }
 
 // event "polyfill"
-twentytwenty.createEvent = function( eventName ) {
+nudgedesignstarter.createEvent = function( eventName ) {
 	var event;
 	if ( typeof window.Event === 'function' ) {
 		event = new Event( eventName );
@@ -88,7 +88,7 @@ if ( ! Element.prototype.matches ) {
 	Cover Modals
 --------------------------------------------------------------------------------------------------- */
 
-twentytwenty.coverModals = {
+nudgedesignstarter.coverModals = {
 
 	init: function() {
 		if ( document.querySelector( '.cover-modal' ) ) {
@@ -201,7 +201,7 @@ twentytwenty.coverModals = {
 					htmlStyle.setProperty( styleKey, styles[ styleKey ] );
 				} );
 
-				_win.twentytwenty.scrolled = parseInt( styles.top, 10 );
+				_win.nudgedesignstarter.scrolled = parseInt( styles.top, 10 );
 
 				if ( adminBar ) {
 					_doc.body.style.setProperty( 'padding-top', paddingTop );
@@ -225,7 +225,7 @@ twentytwenty.coverModals = {
 				}
 
 				setTimeout( function() {
-					var clickedEl = twentytwenty.toggles.clickedEl;
+					var clickedEl = nudgedesignstarter.toggles.clickedEl;
 
 					modal.classList.remove( 'show-modal' );
 
@@ -243,9 +243,9 @@ twentytwenty.coverModals = {
 						clickedEl = false;
 					}
 
-					_win.scrollTo( 0, Math.abs( _win.twentytwenty.scrolled + getAdminBarHeight() ) );
+					_win.scrollTo( 0, Math.abs( _win.nudgedesignstarter.scrolled + getAdminBarHeight() ) );
 
-					_win.twentytwenty.scrolled = 0;
+					_win.nudgedesignstarter.scrolled = 0;
 				}, 500 );
 			} );
 		} );
@@ -274,13 +274,13 @@ twentytwenty.coverModals = {
 		}
 	}
 
-}; // twentytwenty.coverModals
+}; // nudgedesignstarter.coverModals
 
 /*	-----------------------------------------------------------------------------------------------
 	Intrinsic Ratio Embeds
 --------------------------------------------------------------------------------------------------- */
 
-twentytwenty.intrinsicRatioVideos = {
+nudgedesignstarter.intrinsicRatioVideos = {
 
 	init: function() {
 		this.makeFit();
@@ -317,13 +317,13 @@ twentytwenty.intrinsicRatioVideos = {
 		} );
 	}
 
-}; // twentytwenty.instrinsicRatioVideos
+}; // nudgedesignstarter.instrinsicRatioVideos
 
 /*	-----------------------------------------------------------------------------------------------
 	Smooth Scroll
 --------------------------------------------------------------------------------------------------- */
 
-twentytwenty.smoothScroll = {
+nudgedesignstarter.smoothScroll = {
 
 	init: function() {
 		// Scroll to anchor
@@ -372,7 +372,7 @@ twentytwenty.smoothScroll = {
 							scrollOffset = scrollOffset - adminBar.getBoundingClientRect().height;
 						}
 
-						twentytwentyScrollTo( scrollOffset, null, scrollSpeed );
+						nudgedesignstarterScrollTo( scrollOffset, null, scrollSpeed );
 
 						window.location.hash = event.target.hash.slice( 1 );
 					}
@@ -389,7 +389,7 @@ twentytwenty.smoothScroll = {
 			scrollToElement.addEventListener( 'click', function( event ) {
 				var originalOffset, additionalOffset, scrollOffset, scrollSpeed,
 					// Figure out element to scroll to
-					target = event.target.dataset.twentytwentyScrollTo;
+					target = event.target.dataset.nudgedesignstarterScrollTo;
 
 				// Make sure said element exists
 				if ( target ) {
@@ -403,18 +403,18 @@ twentytwenty.smoothScroll = {
 					originalOffset = target.getBoundingClientRect().top + window.pageYOffset;
 					scrollOffset = additionalOffset ? originalOffset + additionalOffset : originalOffset;
 
-					twentytwentyScrollTo( scrollOffset, null, scrollSpeed );
+					nudgedesignstarterScrollTo( scrollOffset, null, scrollSpeed );
 				}
 			} );
 		}
 	}
 
-}; // twentytwenty.smoothScroll
+}; // nudgedesignstarter.smoothScroll
 
 /*	-----------------------------------------------------------------------------------------------
 	Modal Menu
 --------------------------------------------------------------------------------------------------- */
-twentytwenty.modalMenu = {
+nudgedesignstarter.modalMenu = {
 
 	init: function() {
 		// If the current menu item is in a sub level, expand all the levels higher up on load
@@ -429,10 +429,10 @@ twentytwenty.modalMenu = {
 			var activeMenuItem = modalMenu.querySelector( '.current-menu-item' );
 
 			if ( activeMenuItem ) {
-				twentytwentyFindParents( activeMenuItem, 'li' ).forEach( function( element ) {
+				nudgedesignstarterFindParents( activeMenuItem, 'li' ).forEach( function( element ) {
 					var subMenuToggle = element.querySelector( '.sub-menu-toggle' );
 					if ( subMenuToggle ) {
-						twentytwenty.toggles.performToggle( subMenuToggle, true );
+						nudgedesignstarter.toggles.performToggle( subMenuToggle, true );
 					}
 				} );
 			}
@@ -444,7 +444,7 @@ twentytwenty.modalMenu = {
 
 		_doc.addEventListener( 'keydown', function( event ) {
 			var toggleTarget, modal, selectors, elements, menuType, bottomMenu, activeEl, lastEl, firstEl, tabKey, shiftKey,
-				clickedEl = twentytwenty.toggles.clickedEl;
+				clickedEl = nudgedesignstarter.toggles.clickedEl;
 
 			if ( clickedEl && _doc.body.classList.contains( 'showing-modal' ) ) {
 				toggleTarget = clickedEl.dataset.toggleTarget;
@@ -491,13 +491,13 @@ twentytwenty.modalMenu = {
 			}
 		} );
 	}
-}; // twentytwenty.modalMenu
+}; // nudgedesignstarter.modalMenu
 
 /*	-----------------------------------------------------------------------------------------------
 	Primary Menu
 --------------------------------------------------------------------------------------------------- */
 
-twentytwenty.primaryMenu = {
+nudgedesignstarter.primaryMenu = {
 
 	init: function() {
 		this.focusMenuWithChildren();
@@ -540,13 +540,13 @@ twentytwenty.primaryMenu = {
 			}
 		}
 	}
-}; // twentytwenty.primaryMenu
+}; // nudgedesignstarter.primaryMenu
 
 /*	-----------------------------------------------------------------------------------------------
 	Toggles
 --------------------------------------------------------------------------------------------------- */
 
-twentytwenty.toggles = {
+nudgedesignstarter.toggles = {
 
 	clickedEl: false,
 
@@ -583,9 +583,9 @@ twentytwenty.toggles = {
 
 		// Trigger events on the toggle targets before they are toggled
 		if ( target.classList.contains( activeClass ) ) {
-			target.dispatchEvent( twentytwenty.createEvent( 'toggle-target-before-active' ) );
+			target.dispatchEvent( nudgedesignstarter.createEvent( 'toggle-target-before-active' ) );
 		} else {
-			target.dispatchEvent( twentytwenty.createEvent( 'toggle-target-before-inactive' ) );
+			target.dispatchEvent( nudgedesignstarter.createEvent( 'toggle-target-before-inactive' ) );
 		}
 
 		// Get the class to toggle, if specified
@@ -606,7 +606,7 @@ twentytwenty.toggles = {
 
 			// Toggle the target of the clicked toggle
 			if ( toggle.dataset.toggleType === 'slidetoggle' && ! instantly && duration !== '0' ) {
-				twentytwentyMenuToggle( newTarget, duration );
+				nudgedesignstarterMenuToggle( newTarget, duration );
 			} else {
 				newTarget.classList.toggle( classToToggle );
 			}
@@ -622,10 +622,10 @@ twentytwenty.toggles = {
 			}
 
 			// Toggle aria-expanded on the toggle
-			twentytwentyToggleAttribute( toggle, 'aria-expanded', 'true', 'false' );
+			nudgedesignstarterToggleAttribute( toggle, 'aria-expanded', 'true', 'false' );
 
 			if ( self.clickedEl && -1 !== toggle.getAttribute( 'class' ).indexOf( 'close-' ) ) {
-				twentytwentyToggleAttribute( self.clickedEl, 'aria-expanded', 'true', 'false' );
+				nudgedesignstarterToggleAttribute( self.clickedEl, 'aria-expanded', 'true', 'false' );
 			}
 
 			// Toggle body class
@@ -647,13 +647,13 @@ twentytwenty.toggles = {
 			}
 
 			// Trigger the toggled event on the toggle target
-			target.dispatchEvent( twentytwenty.createEvent( 'toggled' ) );
+			target.dispatchEvent( nudgedesignstarter.createEvent( 'toggled' ) );
 
 			// Trigger events on the toggle targets after they are toggled
 			if ( target.classList.contains( activeClass ) ) {
-				target.dispatchEvent( twentytwenty.createEvent( 'toggle-target-after-active' ) );
+				target.dispatchEvent( nudgedesignstarter.createEvent( 'toggle-target-after-active' ) );
 			} else {
-				target.dispatchEvent( twentytwenty.createEvent( 'toggle-target-after-inactive' ) );
+				target.dispatchEvent( nudgedesignstarter.createEvent( 'toggle-target-after-inactive' ) );
 			}
 		}, timeOutTime );
 	},
@@ -717,7 +717,7 @@ twentytwenty.toggles = {
 		} );
 	}
 
-}; // twentytwenty.toggles
+}; // nudgedesignstarter.toggles
 
 /**
  * Is the DOM ready
@@ -726,7 +726,7 @@ twentytwenty.toggles = {
  *
  * @param {Function} fn Callback function to run.
  */
-function twentytwentyDomReady( fn ) {
+function nudgedesignstarterDomReady( fn ) {
 	if ( typeof fn !== 'function' ) {
 		return;
 	}
@@ -738,13 +738,13 @@ function twentytwentyDomReady( fn ) {
 	document.addEventListener( 'DOMContentLoaded', fn, false );
 }
 
-twentytwentyDomReady( function() {
-	twentytwenty.toggles.init();	// Handle toggles
-	twentytwenty.coverModals.init();	// Handle cover modals
-	twentytwenty.intrinsicRatioVideos.init();	// Retain aspect ratio of videos on window resize
-	twentytwenty.smoothScroll.init();	// Smooth scroll to anchor link or a specific element
-	twentytwenty.modalMenu.init();	// Modal Menu
-	twentytwenty.primaryMenu.init();	// Primary Menu
+nudgedesignstarterDomReady( function() {
+	nudgedesignstarter.toggles.init();	// Handle toggles
+	nudgedesignstarter.coverModals.init();	// Handle cover modals
+	nudgedesignstarter.intrinsicRatioVideos.init();	// Retain aspect ratio of videos on window resize
+	nudgedesignstarter.smoothScroll.init();	// Smooth scroll to anchor link or a specific element
+	nudgedesignstarter.modalMenu.init();	// Modal Menu
+	nudgedesignstarter.primaryMenu.init();	// Primary Menu
 } );
 
 /*	-----------------------------------------------------------------------------------------------
@@ -753,7 +753,7 @@ twentytwentyDomReady( function() {
 
 /* Toggle an attribute ----------------------- */
 
-function twentytwentyToggleAttribute( element, attribute, trueVal, falseVal ) {
+function nudgedesignstarterToggleAttribute( element, attribute, trueVal, falseVal ) {
 	if ( trueVal === undefined ) {
 		trueVal = true;
 	}
@@ -773,7 +773,7 @@ function twentytwentyToggleAttribute( element, attribute, trueVal, falseVal ) {
  * @param {HTMLElement} target
  * @param {number} duration
  */
-function twentytwentyMenuToggle( target, duration ) {
+function nudgedesignstarterMenuToggle( target, duration ) {
 	var initialParentHeight, finalParentHeight, menu, menuItems, transitionListener,
 		initialPositions = [],
 		finalPositions = [];
@@ -869,7 +869,7 @@ function twentytwentyMenuToggle( target, duration ) {
  * @param {string} query
  * @return {NodeList} parents matching query
  */
-function twentytwentyFindParents( target, query ) {
+function nudgedesignstarterFindParents( target, query ) {
 	var parents = [];
 
 	// recursively go up the DOM adding matches to the parents array
@@ -888,8 +888,8 @@ function twentytwentyFindParents( target, query ) {
 	return parents;
 }
 
-// twentytwentyEaseInOutQuad functions http://goo.gl/5HLl8
-function twentytwentyEaseInOutQuad( t, b, c, d ) {
+// nudgedesignstarterEaseInOutQuad functions http://goo.gl/5HLl8
+function nudgedesignstarterEaseInOutQuad( t, b, c, d ) {
 	t /= d / 2;
 	if ( t < 1 ) {
 		return ( ( ( c / 2 ) * t ) * t ) + b;
@@ -898,7 +898,7 @@ function twentytwentyEaseInOutQuad( t, b, c, d ) {
 	return ( ( -c / 2 ) * ( ( t * ( t - 2 ) ) - 1 ) ) + b;
 }
 
-function twentytwentyScrollTo( to, callback, duration ) {
+function nudgedesignstarterScrollTo( to, callback, duration ) {
 	var start, change, increment, currentTime;
 
 	function move( amount ) {
@@ -919,8 +919,8 @@ function twentytwentyScrollTo( to, callback, duration ) {
 
 		// increment the time
 		currentTime += increment;
-		// find the value with the quadratic in-out twentytwentyEaseInOutQuad function
-		val = twentytwentyEaseInOutQuad( currentTime, start, change, duration );
+		// find the value with the quadratic in-out nudgedesignstarterEaseInOutQuad function
+		val = nudgedesignstarterEaseInOutQuad( currentTime, start, change, duration );
 		// move the document.body
 		move( val );
 		// do the animation unless its over

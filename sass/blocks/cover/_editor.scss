@@ -1,0 +1,45 @@
+.wp-block-cover,
+.wp-block-cover-image {
+
+	color: $wp-cover__text-color;
+	background-color: $wp-cover__background-color;
+
+	.wp-block-cover__inner-container,
+	.wp-block-cover-image-text,
+	.wp-block-cover-text,
+	.block-editor-block-list__block {
+		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
+		margin-top: ($spacing-default / 1.6);
+		margin-bottom: ($spacing-default / 1.6);
+
+		a:not(.wp-block-button__link) {
+			color: currentColor;
+		}
+	}
+
+	/* default & custom background-color */
+	&:not([class*='background-color']){
+		.wp-block-cover__inner-container,
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		.block-editor-block-list__block {
+			color: $wp-cover__text-color;
+		}
+	}
+
+	/* Treating H2 separately to account for legacy /core styles */
+	h2 {
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+.wp-block-columns {
+
+	@include vertical-block-gap();
+
+	.wp-block-column {
+		& > * {
+			margin-top: $spacing-default;
+			margin-bottom: $spacing-default;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.wp-block-column:not(:last-child) {
+		margin-bottom: $spacing-default;
+
+		@media #{$media_query_at_least_tablet} {
+			/* Resetting margins to match _block-container.scss */
+			margin-bottom: 0;
+		}
+	}
+
+	/**
+	 * Block Options
+	 */
+	&.alignfull {
+		padding-left: $spacing-default;
+		padding-right: $spacing-default;
+
+		&:not(:first-child) {
+			margin-top: $spacing-default;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: $spacing-default;
+		}
+	}
+}

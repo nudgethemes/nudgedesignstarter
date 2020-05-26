@@ -1,10 +1,10 @@
 <?php
 /**
  * The template file for displaying the comments and comment form for the
- * Twenty Twenty theme.
+ * Nudgedesignstarter theme.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
+ * @subpackage Nudgedesignstarter
  * @since 1.0.0
  */
 
@@ -28,13 +28,13 @@ if ( $comments ) {
 
 		<div class="comments-header section-inner small max-percentage">
 
-			<h2 class="comment-reply-title">
+			<h2 class="comment-reply-title heading-size-4">
 			<?php
 			if ( ! have_comments() ) {
-				esc_html_e( 'Leave a comment', 'twentytwenty' );
+				esc_html_e( 'Leave a comment', 'nudgedesignstarter' );
 			} elseif ( '1' === $comments_number ) {
 				/* translators: %s: post title */
-				printf( esc_html_x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), esc_html( get_the_title() ) );
+				printf( esc_html_x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'nudgedesignstarter' ), esc_html( get_the_title() ) );
 			} else {
 				echo esc_html(
 					sprintf(
@@ -44,7 +44,7 @@ if ( $comments ) {
 							'%1$s replies on &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
-							'twentytwenty'
+							'nudgedesignstarter'
 						),
 						number_format_i18n( $comments_number ),
 						esc_html( get_the_title() )
@@ -62,7 +62,7 @@ if ( $comments ) {
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new TwentyTwenty_Walker_Comment(),
+					'walker'      => new Nudgedesignstarter_Walker_Comment(),
 					'avatar_size' => 120,
 					'style'       => 'div',
 				)
@@ -73,8 +73,8 @@ if ( $comments ) {
 					'echo'      => false,
 					'end_size'  => 0,
 					'mid_size'  => 0,
-					'next_text' => __( 'Newer Comments', 'twentytwenty' ) . ' <span aria-hidden="true">&rarr;</span>',
-					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'twentytwenty' ),
+					'next_text' => __( 'Newer Comments', 'nudgedesignstarter' ) . ' <span aria-hidden="true">&rarr;</span>',
+					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'nudgedesignstarter' ),
 				)
 			);
 
@@ -87,7 +87,7 @@ if ( $comments ) {
 				}
 				?>
 
-				<nav class="comments-pagination pagination<?php echo $pagination_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'twentytwenty' ); ?>">
+				<nav class="comments-pagination pagination<?php echo $pagination_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'nudgedesignstarter' ); ?>">
 					<?php echo wp_kses_post( $comment_pagination ); ?>
 				</nav>
 
@@ -111,8 +111,8 @@ if ( comments_open() || pings_open() ) {
 	comment_form(
 		array(
 			'class_form'         => 'section-inner thin max-percentage',
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h2>',
+			'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h4>',
 		)
 	);
 
@@ -126,7 +126,7 @@ if ( comments_open() || pings_open() ) {
 
 	<div class="comment-respond" id="respond">
 
-		<p class="comments-closed"><?php esc_html_e( 'Comments are closed.', 'twentytwenty' ); ?></p>
+		<p class="comments-closed"><?php esc_html_e( 'Comments are closed.', 'nudgedesignstarter' ); ?></p>
 
 	</div><!-- #respond -->
 

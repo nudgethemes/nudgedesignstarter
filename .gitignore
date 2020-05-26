@@ -5,6 +5,5 @@
 init.sh
 templates/*
 
-
-# Theme Exclusions
-/node_modules
+# Other exclusions
+/node_modules/

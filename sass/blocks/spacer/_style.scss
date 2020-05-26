@@ -1,0 +1,21 @@
+.wp-block-spacer {
+	display: block;
+	// Remove vertical margins
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+
+	&.is-style-spacer-vertical-line {
+		background-image: linear-gradient($color__accent 0%, $color__accent 100% );
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 3px 90%;
+		margin-top: $spacing-default;
+		margin-bottom: $spacing-default;
+	}
+
+	@media #{$media_query_until_tablet} {
+		&[style] {
+			height: $spacing-default !important;
+		}
+	}
+}

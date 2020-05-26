@@ -1,0 +1,332 @@
+//Colors
+
+:root .has-accent-color {
+	color: $color__accent;
+}
+
+:root .has-accent-background-color {
+	background-color: $color__accent;
+}
+.has-accent-background-color:not(.has-text-color){
+	color: #fff;
+}
+
+:root .has-primary-color {
+	color: $color__primary;
+}
+
+:root .has-primary-background-color {
+	background-color: $color__primary;
+}
+.has-primary-background-color:not(.has-text-color){
+	color: #fff;
+}
+
+:root .has-secondary-color {
+	color: $color__secondary;
+}
+
+:root .has-secondary-background-color {
+	background-color: $color__secondary;
+}
+.has-secondary-background-color:not(.has-text-color){
+	color: #fff;
+}
+:root .has-subtle-background-color {
+	color: $color__subtle-background;
+}
+
+:root .has-subtle-background-background-color {
+	background-color: $color__subtle-background;
+}
+.has-subtle-background-background-color:not(.has-text-color){
+	color: $color__primary;
+}
+
+:root .has-background-color {
+	color: $color__background;
+}
+
+:root .has-background-background-color {
+	background-color: $color__background;
+}
+.has-background-background-color:not(.has-text-color){
+	color: $color__primary;
+}
+
+/* Block Alignments */
+
+//regular
+//first level regular
+.entry-content > * {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: $spacing-default;
+	max-width: calc(100% - 4rem);
+
+	@media #{$media_query_at_least_tablet}{
+		max-width: $max-content-width;
+	}
+}
+//nested regular
+.entry-content [class*="__inner-container"] > * {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-content-width;
+}
+
+////////////////////////////
+// wide
+
+//general wide
+.alignwide {
+	clear: both;
+}
+
+//first level wide
+.entry-content > .alignwide {
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@media #{$media_query_at_least_tablet}{
+		max-width: calc(100% - 8rem);
+	}
+
+	@media #{$media_query_at_least_desktop}{
+		max-width: $max-content-width--alignwide;
+	}
+}
+
+//nested wide
+.entry-content [class*="__inner-container"] > .alignwide {
+
+	margin-left: auto;
+	margin-right: auto;
+
+	max-width: $max-content-width--alignwide;
+}
+
+////////////////////////////
+// full
+
+//general
+.alignfull {
+	clear: both;
+}
+
+//first level full
+.entry-content > .alignfull {
+	width: 100%;
+	max-width: none;
+}
+
+//nested full
+.entry-content [class*="__inner-container"] > .alignfull {
+
+	margin-left: auto;
+	margin-right: auto;
+
+	max-width: none;
+}
+
+////////////////////////////
+//left
+
+//general left
+.alignleft {
+	/*rtl:ignore*/
+	text-align: left;
+	/*rtl:ignore*/
+	float: left;
+	margin-top: 0;
+	/*rtl:ignore*/
+	margin-right: $spacing-compact;
+	margin-bottom: $spacing-default;
+
+	@media ( min-width: 480px ) {
+		max-width: 26rem;
+	}
+	@media ( min-width: 720px ) {
+		/*rtl:ignore*/
+		margin: 0 1rem 2rem 0;
+
+		max-width: 32rem;
+	}
+}
+
+//first level left
+.entry-content > .alignleft {
+	/*rtl:ignore*/
+	//margin-left: $spacing-compact;
+
+	@media #{$media_query_at_least_tablet}{
+		/*rtl:ignore*/
+		margin-left: calc((100% - #{$max-content-width}) / 2);
+	}
+}
+
+////////////////////////////
+// right
+
+//general
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	margin-top: 0;
+	margin-bottom: $spacing-default;
+	/*rtl:ignore*/
+	margin-left: $spacing-compact;
+
+	@media ( min-width: 480px ) {
+		max-width: 26rem;
+	}
+	@media ( min-width: 720px ) {
+		/*rtl:ignore*/
+		margin: 0 0 1rem 2rem;
+
+		max-width: 32rem;
+	}
+}
+
+//first level right
+.entry-content > .alignright {
+	/*rtl:ignore*/
+	margin-right: 2rem;
+
+	@media #{$media_query_at_least_tablet}{
+		/*rtl:ignore*/
+		margin-right: calc((100% - #{$max-content-width}) / 2);
+	}
+}
+
+
+/**
+ * .aligncenter
+ */
+.aligncenter {
+	clear: both;
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+
+	@media (min-width: 720px) {
+		margin-bottom: 4rem;
+		margin-top: 4rem;
+	}
+}
+
+
+// Make sure siblings of floated elements are top-aligned when nested
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
+}
+
+
+//overwrite gutenberg base styles
+//.wp-block-pullquote.alignleft,
+//.wp-block-pullquote.alignright,
+.wp-block-cover-image.alignleft,
+.wp-block-cover-image.alignright,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright,
+.wp-block-gallery.alignleft,
+.wp-block-gallery.alignright {
+
+	@media ( min-width: 480px ) {
+		max-width: 50%;
+	}
+
+	@media ( min-width: 720px ) {
+		max-width: 32rem;
+	}
+}
+
+
+
+
+// Content alignment
+.has-left-content {
+	justify-content: flex-start;
+}
+
+.has-right-content {
+	justify-content: flex-end;
+}
+
+// Parallax
+.has-parallax {
+	background-attachment: fixed;
+}
+
+// Gutenberg text color options
+.has-text-color {}
+
+// Gutenberg background-color options
+.has-background {
+	&:not(.has-background-background-color) a:not(.wp-block-button__link),
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+// Gutenberg Font-size options
+.is-small-text,
+.has-small-font-size {
+	font-size: $font__size--small;
+}
+
+.is-regular-text,
+.has-regular-font-size,
+.has-normal-font-size,
+.has-medium-font-size {
+	font-size: $font__size--default;
+}
+
+.is-large-text,
+.has-large-font-size {
+	font-size: $font__size--h3;
+}
+
+.is-larger-text,
+.has-larger-font-size,
+.has-huge-font-size {
+	font-size: $font__size--h1;
+	line-height: 1.138888889;
+}
+
+// Drop caps
+.has-drop-cap:not(:focus)::first-letter {
+	font-size: $font__size--h1;
+	line-height: 0.66;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: bold;
+	float: left;
+	margin: 0.1em 0.1em 0 0;
+}
+
+.has-drop-cap:not(:focus)::after {
+	content: "";
+	display: table;
+	clear: both;
+	padding-top: 14px;
+}
+
+.desktop-only {
+	display: none;
+
+	@media #{$media_query_at_least_tablet} {
+		display: block;
+	}
+}
+
+/**
+ * Spacing Overrides
+ */
+
+@import "spacing-overrides";

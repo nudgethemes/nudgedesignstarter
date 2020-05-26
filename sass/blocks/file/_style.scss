@@ -1,0 +1,14 @@
+.wp-block-file {
+	//stronger selector
+	a.wp-block-file__button{
+		@include button-style();
+
+		margin: .5rem;
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			opacity: 1;
+		}
+	}
+}
