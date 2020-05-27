@@ -1100,18 +1100,6 @@ button.search-untoggle {
 
 .entry-header-inner {
 	background-color: #FFFFFF;
-	padding: 2.4rem 1.4rem 0;
-}
-
-@media (min-width: 60em) {
-	.entry-header-inner {
-		padding: 3.4rem 3.4rem 0;
-	}
-}
-
-.hentry.has-post-thumbnail .entry-header-inner {
-	max-width: 90%;
-	margin-top: -15%;
 }
 
 .hentry.sticky .entry-header-inner {

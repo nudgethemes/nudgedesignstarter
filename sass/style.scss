@@ -498,16 +498,6 @@ button.search-untoggle {
 }
 .entry-header-inner {
 	background-color: $color__background;
-	padding: 2.4rem 1.4rem 0;
-
-	@media #{$media_query_at_least_laptop}{
-		padding: 3.4rem 3.4rem 0;
-	}
-
-	.hentry.has-post-thumbnail & {
-		max-width: 90%;
-		margin-top: -15%;
-	}
 }
 
 .hentry.sticky .entry-header-inner {
