@@ -966,7 +966,7 @@ table th,
 }
 
 .wp-block .wp-block[data-type="core/group"]:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]),
-.wp-block .wp-block[data-type="core/cover"]:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]) {
+.wp-block .wp-block[data-type="core/cover"]:not([data-alifgn="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]) {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 710px;

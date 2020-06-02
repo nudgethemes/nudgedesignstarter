@@ -406,6 +406,8 @@ function nudgedesignstarter_block_editor_settings() {
 		),
 	);
 
+	add_theme_support( 'editor-color-palette', $editor_color_palette );
+
 	// Block Editor Font Sizes.
 	add_theme_support(
 		'editor-font-sizes',
