@@ -104,10 +104,10 @@ function nudgedesignstarter_theme_support() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Waverly, use a find and replace
-	 * to change 'waverly' to the name of your theme in all the template files.
+	 * If you're building a theme based on Nudgedesignstarter, use a find and replace
+	 * to change 'nudgedesignstarter' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'waverly' );
+	load_theme_textdomain( 'nudgedesignstarter' );
 
 	// Add support for Block Styles.
 	add_theme_support( 'wp-block-styles' );
@@ -130,7 +130,7 @@ function nudgedesignstarter_theme_support() {
 		array(
 			'author-bio'   => true, // display or not the author bio: true or false
 			'post-details' => array(
-				'stylesheet' => 'waverly-style', // name of the theme's stylesheet
+				'stylesheet' => 'ulteriorepicure-style', // name of the theme's stylesheet
 				'date'       => '.post-date', // a CSS selector matching the elements that display the post date.
 				'categories' => '.entry-categories', // a CSS selector matching the elements that display the post categories.
 				'tags'       => '.post-tags', // a CSS selector matching the elements that display the post tags.
