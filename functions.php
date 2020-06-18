@@ -130,7 +130,7 @@ function nudgedesignstarter_theme_support() {
 		array(
 			'author-bio'   => true, // display or not the author bio: true or false
 			'post-details' => array(
-				'stylesheet' => 'ulteriorepicure-style', // name of the theme's stylesheet
+				'stylesheet' => 'nudgedesignstarter-style', // name of the theme's stylesheet
 				'date'       => '.post-date', // a CSS selector matching the elements that display the post date.
 				'categories' => '.entry-categories', // a CSS selector matching the elements that display the post categories.
 				'tags'       => '.post-tags', // a CSS selector matching the elements that display the post tags.
