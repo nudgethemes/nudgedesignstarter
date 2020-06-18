@@ -225,6 +225,10 @@ button.toggle {
 .search-form {
 	position: relative;
 
+	.widget & {
+		max-width: 400px;
+	}
+
 	.search-field,
 	.search-submit {
 		margin: 0 0 0.8rem 0;
@@ -234,9 +238,7 @@ button.toggle {
 	.search-field {
 		width: 100%;
 
-		.widget & {
-			max-width: 400px;
-		}
+
 	}
 
 	.search-submit {

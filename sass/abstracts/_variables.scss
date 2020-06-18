@@ -3,9 +3,9 @@
 /*	Variables
 /* -------------------------------------------------------------------------- */
 
-/* Fonts ---------------------------------- */
-$font_body:         Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
-$font__heading:     Arimo, Arial, Helvetica Neue, Helvetica, sans-serif;
+// Fonts ----------------------------------
+$font_body:         Arial, Helvetica Neue, Helvetica, sans-serif;
+$font__heading:     Arial, Helvetica Neue, Helvetica, sans-serif;
 $font__blockquote:  Georgia, serif;
 
 $font__size--default: 1.8rem;
@@ -25,10 +25,10 @@ $font__size--large: $font__size--h3;
 $font__size--huge: $font__size--h1;
 
 $line__height--default: 1.4;
-$line__height--heading: 1.25;;
+$line__height--heading: 1.25;
 $line__height--h1: 1.138888889;
 
-/* Color ---------------------------------- */
+// Colors ----------------------------------
 $color__primary:               #009FDB;
 $color__secondary:             #BDBFC1;
 $color__accent:                #FFC300;
@@ -39,29 +39,34 @@ $color__border:                #021A23;
 $color__focus:                 #F2F2F2;
 $color__border-color--light:   #c8c8c8;
 
-
-//WooCommerce Colors
-$color__woo_star:              #EFCC11;
-$color__wc-alert:              #DF487E;
-
-$transition_duration: 0.15s;
-$transition_easing: linear;
-$transition_all: all $transition_duration $transition_easing;
-
-$transition_chevron: transform .3s ease;
+// spacing ---------------------------------
+$spacing-minimal: .5rem;
+$spacing-compact: 1rem;
+$spacing-default: 2rem;
+$spacing-wider: 4rem;
 
 $max-content-width: 68rem;
 $max-content-width--alignwide: 120rem;
 $spacing-mobile: 4rem;
 $spacing-tablet: 8rem;
 
-/* Responsive ---------------------------------- */
+//WooCommerce Colors
+$color__woo_star:              #EFCC11;
+$color__wc-alert:              #DF487E;
+
+// other
+$transition_duration: 0.15s;
+$transition_easing: linear;
+$transition_all: all $transition_duration $transition_easing;
+
+$transition_chevron: transform .3s ease;
+
+// Responsive ------------------------------
 
 $breakpoint_small_blocks: 37.5em; //600px
 $breakpoint_tablet: 48em; //768px
 $breakpoint_laptop: 60em; //960px
 $breakpoint_desktop: 80em; //1280px
-
 
 $media_query_until_small_blocks: screen and (max-width: $breakpoint_small_blocks - .0625);
 $media_query_at_least_small_blocks: screen and (min-width: $breakpoint_small_blocks);
@@ -72,17 +77,39 @@ $media_query_at_least_laptop: screen and (min-width: $breakpoint_laptop);
 $media_query_until_desktop: screen and (max-width: $breakpoint_desktop - .0625);
 $media_query_at_least_desktop: screen and (min-width: $breakpoint_desktop);
 
-/* Blocks ---------------------------------- */
+// Buttons ---------------------------------
+//primary
+$color__button__background: $color__primary;
+$color__button__border-color: $color__primary;
+$color__button__text: $color__background;
+//primary hover
+$color__button__background--hover: $color__background;
+$color__button__border-color--hover: $color__primary;
+$color__button__text--hover: $color__primary;
+
+//outline
+$color__button--outline__background: transparent;
+$color__button--outline__border-color: $color__body-copy;
+$color__button--outline__text: $color__body-copy;
+//outline hover
+$color__button--outline__background--hover: $color__body-copy;
+$color__button--outline__border-color--hover: $color__background;
+$color__button--outline__text--hover: $color__body-copy;
+
+//secondary
+$color__button--secondary__background: $color__body-copy;
+$color__button--secondary__border-color: $color__body-copy;
+$color__button--secondary__text: $color__background;
+//secondary hover
+$color__button--secondary__background--hover: $color__background;
+$color__button--secondary__border-color--hover: $color__body-copy;
+$color__button--secondary__text--hover: $color__body-copy;
+
+// Blocks ----------------------------------
 $content-max-width: 59rem;
-
-
-$spacing-minimal: .5rem;
-$spacing-compact: 1rem;
-$spacing-default: 2rem;
-$spacing-wider: 4rem;
 
 $spacing-vertical-block-gap: 8rem;
 
-//cover
-$wp-cover__text-color: $color__primary;
+//cover block
+$wp-cover__text-color: $color__body-copy;
 $wp-cover__background-color: $color__background;

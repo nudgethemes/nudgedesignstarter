@@ -24,7 +24,7 @@
 }
 .wp-block-jetpack-rating-star path.is-rating-unfilled {
 	fill-opacity: 1;
-	stroke: $color__primary;
+	stroke: $color__body-copy;
 	fill: none;
 }
 
@@ -46,7 +46,7 @@ body {
 
 		#eu-cookie-law {
 			background: $color__background;
-			border: 1px solid $color__primary;
+			border: 1px solid $color__body-copy;
 			color: $color__body-copy;
 			font-size: $font__size--small;
 			line-height: inherit;
@@ -58,7 +58,7 @@ body {
 
 			&.negative {
 				background: $color__body-copy;
-				border-color: $color__primary;
+				border-color: $color__body-copy;
 				color: $color__background;
 
 				input.accept {
@@ -68,7 +68,7 @@ body {
 					&:hover,
 					&:focus,
 					&.has-focus {
-						background: $color__primary;
+						background: $color__body-copy;
 					}
 				}
 			}

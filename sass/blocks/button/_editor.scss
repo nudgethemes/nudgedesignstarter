@@ -6,31 +6,31 @@
 .wp-block-button {
 
 	/* Outline Style */
-	&.is-style-outline {
+	&:not(.has-background).is-style-outline {
 
 		.wp-block-button__link:not(.has-background) {
-			background: transparent;
+
+			background: $color__button--outline__background;
 			border: 2px solid currentcolor;
 
 			&:not(.has-text-color) {
-				color: $color__primary;
+				color: $color__button--outline__text;
 			}
 
 			&:hover,
 			&:focus,
 			&.has-focus {
-				background-color: $color__primary;
-				border-color: $color__primary;
-				color: $color__background;
+				background-color: $color__button--outline__background--hover;
+				color: $color__button--outline__text--hover;
 			}
-		}
-
-		.wp-block-button__link:not(.has-text-color) {
-			color: inherit;
 		}
 	}
 
-	/* Squared Style */
+	.is-style-outline .wp-block-button__link:not(.has-text-color) {
+		color: inherit;
+	}
+
+	//Squared Style
 	&.is-style-squared .wp-block-button__link {
 		border-radius: 0;
 	}

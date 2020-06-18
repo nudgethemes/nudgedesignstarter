@@ -8,10 +8,10 @@
 
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: $color__primary;
-	border: 2px solid  $color__primary;
+	background: $color__button__background;
+	border: 2px solid  $color__button__border-color;
 	border-radius: 4px;
-	color: #fff;
+	color: $color__button__text;
 	cursor: pointer;
 	display: inline-block;
 	font-size: (1.4rem * $multiplier );
@@ -33,8 +33,9 @@
 	&:hover,
 	&:focus,
 	&.has-focus {
-		background-color: #FFF;
-		color: $color__primary;
+		background-color: $color__button__background--hover;
+		border: 2px solid  $color__button__border-color--hover;
+		color: $color__button__text--hover;
 	}
 }
 
