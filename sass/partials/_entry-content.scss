@@ -1,0 +1,41 @@
+/* -------------------------------------------------------------------------- */
+
+/*	8. Entry Content
+/* -------------------------------------------------------------------------- */
+
+.entry-content {
+	line-height: 1.524;
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	a:hover,
+	a:focus {
+		text-decoration: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 3.5rem auto 2rem;
+	}
+
+	ul ul,
+	ol ol,
+	ul ol,
+	ol ul {
+		margin-bottom: 1rem;
+	}
+
+	hr {
+		margin: 4rem auto;
+	}
+}

@@ -691,8 +691,8 @@ button.sub-menu-toggle {
 .woocommerce-pagination .page-numbers{
 
     a {
-        background-color: $color__button__background;
-        border: 1px solid $color__button__border-color;
+        background-color: $color__primary;
+        border: 1px solid $color__primary;
         border-radius: 4px;
         color: $color__button__text;
         padding: 1rem 1.2rem;
@@ -718,10 +718,10 @@ button.sub-menu-toggle {
     }
 
     span.current {
-        background-color: $color__button__background;
-        border: 1px solid $color__button__border-color;
+        background-color: $color__background;
+        border: 1px solid $color__primary;
         border-radius: 4px;
-        color: $color__button__text;
+        color: $color__primary;
         padding: 1rem 1.2rem;
     }
 }
