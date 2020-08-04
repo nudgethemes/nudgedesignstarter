@@ -79,9 +79,15 @@ if ( ! Element.prototype.matches ) {
 		return window.matchMedia && window.matchMedia( query ).matches;
 	};
 
-	if ( ( 'ontouchstart' in window ) || ( window.DocumentTouch && document instanceof window.DocumentTouch ) || matchMedia() ) {
-		document.body.classList.add( 'touch-enabled' );
-	}
+	// Add a class to the body for when touch is enabled for browsers that don't support media queries
+	// for interaction media features. Adapted from <https://codepen.io/Ferie/pen/vQOMmO>
+	nudgedesignstarterDomReady( function() {
+
+		if ( ( 'ontouchstart' in window ) || ( window.DocumentTouch && document instanceof window.DocumentTouch ) || matchMedia() ) {
+			document.body.classList.add( 'touch-enabled' );
+		}
+	} );
+
 }() );
 
 /*	-----------------------------------------------------------------------------------------------

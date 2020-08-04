@@ -350,7 +350,7 @@ add_action( 'widgets_init', 'nudgedesignstarter_sidebar_registration' );
  */
 function nudgedesignstarter_enqueue_block_editor_assets() {
 
-	$style_version = filemtime( get_theme_file_path( '/style-editor.css' ) );
+	$style_version = filemtime( get_theme_file_path( '/assets/js/editor-script-block.js' ) );
 
 	// Enqueue the editor script.
 	wp_enqueue_script( 'nudgedesignstarter-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), $style_version, true );
