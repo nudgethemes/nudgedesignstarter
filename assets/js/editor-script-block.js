@@ -37,7 +37,7 @@ wp.domReady( function() {
 
 	function getTemplateCssClass( template ) {
 
-		return template.replace('.php', '').replace('/[^a-zA-Z0-9]/gi', '');
+		return template.replace('.php', '').replace(/[^a-zA-Z0-9]/gi, '');
 	}
 
 } );
